@@ -31,49 +31,37 @@
             --pink: #ff006e;
             --yellow: #ffbe0b;
             
-            /* --- THÈME MIDNIGHT PRO (Modifié) --- */
-            --bg-primary: #020617; /* Slate 950 - Bleu nuit profond */
-            --bg-secondary: #0f172a; /* Slate 900 */
+            /* --- THÈME MIDNIGHT PRO --- */
+            --bg-primary: #020617; 
+            --bg-secondary: #0f172a; 
             
-            /* Effets de transparence (Glassmorphism - Adapté au bleu nuit) */
-            --glass-bg: rgba(30, 41, 59, 0.6); /* Slate 800 avec transparence */
+            --glass-bg: rgba(30, 41, 59, 0.6); 
             --glass-border: rgba(255, 255, 255, 0.08);
             
-            /* Bordures colorées par défaut pour le style Cyber */
-            --card-border: rgba(255, 107, 53, 0.2);
-            
-            /* Modales & Dock */
-            --modal-bg: rgba(2, 6, 23, 0.95); /* Slate 950 presque opaque */
-            --dock-bg: rgba(15, 23, 42, 0.8); /* Slate 900 */
+            --modal-bg: rgba(2, 6, 23, 0.95); 
+            --dock-bg: rgba(15, 23, 42, 0.8); 
             --dock-border: rgba(255, 255, 255, 0.1);
             
-            /* Typographie */
             --text-primary: #ffffff;
-            --text-secondary: #94a3b8; /* Slate 400 - Plus doux sur bleu nuit */
+            --text-secondary: #94a3b8; 
             
-            /* Fonts Families */
             --font-display: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
 
-        /* --- THÈME CLAIR (MODE SOBRE / ENTREPRISE) --- */
+        /* --- THÈME CLAIR (MODE SOBRE) --- */
         body.sober-mode {
-            /* Fond gris très clair "Papier" */
             --bg-primary: #f2f2f7;
             --bg-secondary: #ffffff;
             
-            /* Cartes blanches et propres */
             --glass-bg: rgba(255, 255, 255, 0.85);
             --glass-border: rgba(0, 0, 0, 0.05);
-            --card-border: rgba(0, 0, 0, 0.08);
             
             --modal-bg: rgba(255, 255, 255, 0.98);
             
-            /* Texte sombre lisible */
             --text-primary: #1d1d1f;
             --text-secondary: #515155;
             
-            /* Dock clair */
             --dock-bg: rgba(255, 255, 255, 0.9);
             --dock-border: rgba(0, 0, 0, 0.1);
         }
@@ -83,16 +71,15 @@
             color: var(--text-primary);
             font-family: var(--font-body);
             line-height: 1.6;
-            overflow-x: hidden; /* Évite le scroll horizontal */
-            padding-bottom: 140px; /* Marge pour le Dock en bas */
+            overflow-x: hidden; 
+            padding-bottom: 140px; 
             transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         /* ==========================================================================
-           2. EFFETS D'ARRIÈRE-PLAN (PARTICULES & LUMIÈRES)
+           2. EFFETS D'ARRIÈRE-PLAN
            ========================================================================== */
         
-        /* Grille futuriste en fond */
         .grid-background {
             position: fixed;
             inset: 0;
@@ -104,7 +91,6 @@
             pointer-events: none;
         }
 
-        /* Halo lumineux qui suit la souris */
         .cursor-glow {
             position: fixed;
             width: 700px;
@@ -113,22 +99,14 @@
             z-index: 1;
             opacity: 0;
             transition: opacity 0.5s ease;
-            background: radial-gradient(
-                circle, 
-                rgba(255, 107, 53, 0.12) 0%, 
-                rgba(0, 212, 170, 0.08) 30%, 
-                transparent 70%
-            );
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.12) 0%, rgba(0, 212, 170, 0.08) 30%, transparent 70%);
             transform: translate(-50%, -50%);
             filter: blur(60px);
             mix-blend-mode: screen;
         }
         
-        .cursor-glow.active {
-            opacity: 1;
-        }
+        .cursor-glow.active { opacity: 1; }
 
-        /* Orbes flottantes colorées */
         .orb {
             position: fixed;
             border-radius: 50%;
@@ -138,33 +116,9 @@
             opacity: 0.3;
             transition: opacity 0.5s ease;
         }
-
-        .orb-1 {
-            top: 5%;
-            left: 5%;
-            width: 40vw;
-            height: 40vw;
-            background: linear-gradient(135deg, var(--orange), var(--pink));
-            animation: float 10s ease-in-out infinite;
-        }
-
-        .orb-2 {
-            top: 40%;
-            right: 5%;
-            width: 50vw;
-            height: 50vw;
-            background: linear-gradient(135deg, var(--teal), var(--purple));
-            animation: float 12s ease-in-out infinite 2s;
-        }
-
-        .orb-3 {
-            bottom: 5%;
-            left: 20%;
-            width: 45vw;
-            height: 45vw;
-            background: linear-gradient(135deg, var(--purple), var(--yellow));
-            animation: float 14s ease-in-out infinite 4s;
-        }
+        .orb-1 { top: 5%; left: 5%; width: 40vw; height: 40vw; background: linear-gradient(135deg, var(--orange), var(--pink)); animation: float 10s ease-in-out infinite; }
+        .orb-2 { top: 40%; right: 5%; width: 50vw; height: 50vw; background: linear-gradient(135deg, var(--teal), var(--purple)); animation: float 12s ease-in-out infinite 2s; }
+        .orb-3 { bottom: 5%; left: 20%; width: 45vw; height: 45vw; background: linear-gradient(135deg, var(--purple), var(--yellow)); animation: float 14s ease-in-out infinite 4s; }
 
         @keyframes float {
             0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
@@ -172,7 +126,6 @@
             66% { transform: translate(-20px, 20px) scale(0.95) rotate(-5deg); }
         }
 
-        /* Conteneur principal centré */
         .container {
             position: relative;
             z-index: 10;
@@ -182,70 +135,32 @@
         }
 
         /* ==========================================================================
-           3. HERO SECTION (L'ACCUEIL)
+           3. HERO SECTION 
            ========================================================================== */
         
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6rem 1rem;
-            position: relative;
-        }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 6rem 1rem; position: relative; }
+        .hero-content { text-align: center; max-width: 950px; width: 100%; }
 
-        .hero-content {
-            text-align: center;
-            max-width: 950px;
-            width: 100%;
-        }
-
-        /* Image de profil avec animation Pulse */
-        .profile-image-wrapper {
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: center;
-        }
-
+        .profile-image-wrapper { margin-bottom: 2rem; display: flex; justify-content: center; }
         .profile-image {
             width: clamp(150px, 20vw, 220px);
             height: clamp(150px, 20vw, 220px);
             border-radius: 50%;
             padding: 6px;
-            background: linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
-                        linear-gradient(135deg, var(--orange), var(--teal), var(--purple)) border-box;
+            background: linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box, linear-gradient(135deg, var(--orange), var(--teal), var(--purple)) border-box;
             border: 4px solid transparent;
             box-shadow: 0 0 50px rgba(255, 107, 53, 0.3), 0 0 100px rgba(106, 76, 147, 0.2);
             animation: fadeInScale 1s ease-out, profilePulse 4s infinite;
         }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+        .profile-image img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 
         @keyframes profilePulse {
             0%, 100% { box-shadow: 0 0 50px rgba(255, 107, 53, 0.3); }
             50% { box-shadow: 0 0 80px rgba(255, 107, 53, 0.5), 0 0 100px rgba(106, 76, 147, 0.4); }
         }
+        @keyframes fadeInScale { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
 
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        /* Titre Principal */
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(1.5rem, 3vw, 2.5rem); 
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
+        .hero-title { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.02em; }
         .gradient-text {
             background: linear-gradient(135deg, var(--orange), var(--teal), var(--purple));
             -webkit-background-clip: text;
@@ -255,1173 +170,297 @@
             filter: drop-shadow(0 0 30px rgba(255, 107, 53, 0.4));
         }
 
-        /* Sous-titre & Description */
-        .hero-description {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            color: var(--text-secondary);
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-        }
+        .hero-description { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary); max-width: 800px; margin: 0 auto 3rem; line-height: 1.8; }
+        .hero-description .highlight { color: var(--teal); font-weight: 600; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3); }
 
-        .hero-description .highlight {
-            color: var(--teal);
-            font-weight: 600;
-            text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);
-        }
-
-        /* --- BOUTONS HERO (AVEC L'ANIMATION CERCLE) --- */
-        .cta-container {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
+        .cta-container { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1.2rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-family: var(--font-display);
-            position: relative;
-            overflow: hidden; 
-            z-index: 1;
+            display: inline-flex; align-items: center; gap: 0.8rem; padding: 1.2rem 2.5rem; font-size: 1.1rem; font-weight: 700;
+            border-radius: 1rem; text-decoration: none; transition: all 0.3s ease; font-family: var(--font-display);
+            position: relative; overflow: hidden; z-index: 1;
         }
-
-        /* L'Animation "Cercle qui grandit" au survol */
         .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
-            z-index: -1;
+            content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2); transform: translate(-50%, -50%); transition: width 0.6s ease, height 0.6s ease; z-index: -1;
         }
+        .btn:hover::before { width: 500px; height: 500px; }
+        .btn-primary { background: linear-gradient(135deg, var(--orange), var(--pink)); color: white; box-shadow: 0 10px 40px rgba(255, 107, 53, 0.5); }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 50px rgba(255, 107, 53, 0.7); }
+        .btn-secondary { background: transparent; color: var(--text-primary); border: 2px solid rgba(0, 212, 170, 0.5); backdrop-filter: blur(5px); }
+        .btn-secondary:hover { border-color: var(--teal); transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0, 212, 170, 0.2); }
 
-        .btn:hover::before {
-            width: 500px;
-            height: 500px;
-        }
-
-        /* Bouton Primaire (Dégradé) */
-        .btn-primary {
-            background: linear-gradient(135deg, var(--orange), var(--pink));
-            color: white;
-            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.5);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(255, 107, 53, 0.7);
-        }
-
-        /* Bouton Secondaire (Outline) */
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 2px solid rgba(0, 212, 170, 0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--teal);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 212, 170, 0.2);
-        }
-
-        /* Indicateur de Scroll (Flèche bas) */
         .scroll-down {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--text-secondary);
-            animation: bounce 2s infinite;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: color 0.3s;
+            position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); color: var(--text-secondary);
+            animation: bounce 2s infinite; cursor: pointer; opacity: 0.7; transition: color 0.3s;
         }
-        
-        .scroll-down:hover {
-            color: var(--orange);
-            opacity: 1;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
-            40% { transform: translate(-50%, -10px); }
-            60% { transform: translate(-50%, -5px); }
-        }
+        .scroll-down:hover { color: var(--orange); opacity: 1; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); } 40% { transform: translate(-50%, -10px); } 60% { transform: translate(-50%, -5px); } }
 
         /* ==========================================================================
-           4. STRUCTURE GÉNÉRALE DES SECTIONS
+           4. SECTIONS & GRIDS
            ========================================================================== */
         
-        section {
-            padding: clamp(4rem, 8vw, 8rem) 1rem;
-            position: relative;
-        }
+        section { padding: clamp(4rem, 8vw, 8rem) 1rem; position: relative; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 1rem; letter-spacing: -0.02em; }
+        .section-subtitle { font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--text-secondary); }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
+        .experience-grid, .vision-grid, .skills-grid {
+            display: grid; gap: 2rem; max-width: 1400px; margin: 0 auto; grid-template-columns: 1fr;
         }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            color: var(--text-secondary);
-        }
-
-        /* --- GRILLES (Layout Adaptatif) --- */
-        
-        .experience-grid, 
-        .vision-grid, 
-        .skills-grid {
-            display: grid;
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            grid-template-columns: 1fr; /* Mobile First */
-        }
-
-        /* Tablette (min 768px) */
-        @media (min-width: 768px) {
-            .experience-grid, 
-            .vision-grid, 
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Desktop (min 1200px) */
+        @media (min-width: 768px) { .experience-grid, .vision-grid, .skills-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1200px) {
-            .experience-grid { grid-template-columns: repeat(3, 1fr); }
+            .experience-grid { grid-template-columns: repeat(2, 1fr); }
             .vision-grid { grid-template-columns: repeat(4, 1fr); }
             .skills-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         /* ==========================================================================
-           5. CARDS (DESIGN GLASSMORPHISM)
+           5. CARDS (GLASSMORPHISM & INTERACTIONS)
            ========================================================================== */
         
         .card-glass {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 1.5rem;
-            padding: 2rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border); border-radius: 1.5rem; padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
-        /* Effet de survol */
-        .experience-card:hover, 
-        .vision-card:hover, 
-        .skill-category:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: var(--orange);
-            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.15), inset 0 0 20px rgba(255, 107, 53, 0.05);
-            background: rgba(30, 30, 30, 0.01);
+        .vision-card:hover, .skill-category:hover {
+            transform: translateY(-10px) scale(1.02); border-color: var(--orange);
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.15), inset 0 0 20px rgba(255, 107, 53, 0.05); background: rgba(30, 30, 30, 0.01);
         }
 
-        /* --- DÉTAILS EXPÉRIENCES --- */
-        .exp-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+        /* --- STYLE EXPÉRIENCES (POPUP MODE) --- */
+        .experience-card { cursor: pointer; transition: all 0.3s ease; }
+        
+        .experience-card:hover {
+            border-color: var(--card-color, var(--orange));
+            background: rgba(255, 255, 255, 0.03);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
+
+        .exp-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 0; }
 
         .exp-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: white;
-            background: #FFFFFF; /* Fond blanc pour logos */
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            overflow: hidden;
-            padding: 2px;
+            width: 70px; height: 70px; border-radius: 1.2rem; display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; color: white; background: #FFFFFF; box-shadow: 0 10px 25px rgba(0,0,0,0.3); overflow: hidden; padding: 2px;
         }
-        
-        .exp-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        
-        /* Fallback pour icônes sans image */
-        .exp-icon.no-img {
-            background: linear-gradient(135deg, #ff6b35, #f77f00); 
-            padding: 0;
-        }
+        .exp-icon img { width: 100%; height: 100%; object-fit: contain; }
+        .exp-icon.no-img { background: linear-gradient(135deg, #ff6b35, #f77f00); padding: 0; }
 
-        .exp-info h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-            line-height: 1.2;
-        }
+        .exp-info { flex: 1; }
+        .exp-info h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.2rem; line-height: 1.2; }
+        .exp-period { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.2rem; font-weight: 500; }
+        .exp-company { font-weight: 600; font-size: 1.05rem; color: var(--text-primary); }
 
-        .exp-period {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 0.3rem;
+        .exp-action {
+            display: flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+            border-radius: 50%; background: rgba(255, 255, 255, 0.05); color: var(--text-secondary);
+            transition: all 0.3s; flex-shrink: 0; border: 1px solid transparent;
         }
-
-        .exp-company {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--text-primary);
-        }
-
-        .exp-description {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .exp-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
+        .experience-card:hover .exp-action, .timeline-item:hover .exp-action {
+            background: var(--card-color, var(--orange)); color: white; transform: scale(1.1);
+            border-color: rgba(255,255,255,0.2); box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .exp-tag {
-            padding: 0.4rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            background: rgba(255, 107, 53, 0.1);
-            border: 1px solid rgba(255, 107, 53, 0.3);
-            color: var(--orange);
-            transition: all 0.3s;
+            padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 600;
+            background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary); transition: all 0.3s;
         }
+        
+        .modal-content::-webkit-scrollbar { width: 8px; }
+        .modal-content::-webkit-scrollbar-track { background: transparent; }
+        .modal-content::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 10px; }
+        .modal-content::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.3); }
 
-        .exp-tag:hover {
-            background: var(--orange);
-            color: white;
-        }
-
-        /* --- DÉTAILS VISION --- */
-        .vision-icon {
-            width: 65px;
-            height: 65px;
-            border-radius: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .vision-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .vision-card p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
+        .vision-icon { width: 65px; height: 65px; border-radius: 1.2rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .vision-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .vision-card p { color: var(--text-secondary); line-height: 1.7; }
 
         /* ==========================================================================
-           6. SECTION ATOUTS (AVEC MODAL POPUPS INTERACTIFS)
+           6. SECTION ATOUTS 
            ========================================================================== */
         
-        .traits-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
-            gap: 2rem;
-        }
-
-        /* Barres latérales de couleur */
+        .traits-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr)); gap: 2rem; }
         .trait-card.strengths { border-left: 4px solid var(--teal); }
         .trait-card.weaknesses { border-left: 4px solid var(--yellow); }
+        .trait-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+        .trait-badge { padding: 0.5rem 1.2rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.05em; }
+        .trait-badge.green { background: rgba(0, 212, 170, 0.15); color: var(--teal); border: 1px solid rgba(0, 212, 170, 0.3); }
+        .trait-badge.amber { background: rgba(255, 190, 11, 0.15); color: var(--yellow); border: 1px solid rgba(255, 190, 11, 0.3); }
+        .trait-list { display: flex; flex-direction: column; gap: 1rem; }
 
-        .trait-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .trait-badge {
-            padding: 0.5rem 1.2rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-        }
-
-        .trait-badge.green { 
-            background: rgba(0, 212, 170, 0.15); 
-            color: var(--teal); 
-            border: 1px solid rgba(0, 212, 170, 0.3); 
-        }
-        
-        .trait-badge.amber { 
-            background: rgba(255, 190, 11, 0.15); 
-            color: var(--yellow); 
-            border: 1px solid rgba(255, 190, 11, 0.3); 
-        }
-
-        .trait-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        /* Élément cliquable pour ouvrir la popup */
         .trait-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 1rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid transparent;
+            display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; background: rgba(255, 255, 255, 0.03);
+            border-radius: 1rem; transition: all 0.3s ease; cursor: pointer; border: 1px solid transparent;
         }
+        .trait-item:hover { transform: translateX(10px); background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.1); }
+        .trait-item i { margin-top: 3px; transition: transform 0.3s; }
+        .trait-item:hover i { transform: scale(1.2); }
+        .trait-item span { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; }
 
-        .trait-item:hover {
-            transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .trait-item i {
-            margin-top: 3px;
-            transition: transform 0.3s;
-        }
-
-        .trait-item:hover i {
-            transform: scale(1.2);
-        }
-
-        .trait-item span {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* --- STYLE DES MODALES POPUP --- */
+        /* --- STYLE DES MODALES POPUP UNIFIÉES --- */
         .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 2000;
+            display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.4s ease; backdrop-filter: blur(10px);
         }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
+        .modal-overlay.active { opacity: 1; visibility: visible; }
         .modal-content {
-            background: var(--modal-bg);
-            border: 1px solid var(--glass-border);
-            padding: 3rem;
-            border-radius: 2rem;
-            max-width: 650px;
-            width: 90%;
-            transform: translateY(30px);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+            background: var(--modal-bg); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 2rem;
+            max-width: 700px; width: 90%; max-height: 85vh; overflow-y: auto; transform: translateY(30px); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative; box-shadow: 0 25px 80px rgba(0,0,0,0.6);
         }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        
         .modal-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            color: var(--text-primary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
+            position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255, 255, 255, 0.1); border: none;
+            width: 40px; height: 40px; border-radius: 50%; color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s;
         }
-
-        .modal-close:hover {
-            background: var(--orange);
-            color: white;
-            transform: rotate(90deg);
-        }
-
-        .modal-title {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, var(--orange), var(--teal));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .modal-text {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
+        .modal-close:hover { background: var(--orange); color: white; transform: rotate(90deg); }
+        .modal-title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; }
 
         /* ==========================================================================
            7. COMPÉTENCES
            ========================================================================== */
         
-        .skill-category h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
+        .skill-category h3 { display: flex; align-items: center; gap: 0.8rem; font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; margin-bottom: 1.5rem; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
         .skill-tag {
-            padding: 0.5rem 1.1rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-secondary);
-            transition: all 0.3s;
+            padding: 0.5rem 1.1rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 500;
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-secondary); transition: all 0.3s;
         }
-
-        .skill-tag:hover {
-            background: var(--purple);
-            color: white;
-            transform: scale(1.1);
-            border-color: transparent;
-            box-shadow: 0 0 20px rgba(106, 76, 147, 0.5);
-        }
+        .skill-tag:hover { background: var(--purple); color: white; transform: scale(1.1); border-color: transparent; box-shadow: 0 0 20px rgba(106, 76, 147, 0.5); }
 
         /* ==========================================================================
-           8. FORMATION (TIMELINE)
+           8. FORMATION (TIMELINE POPUP)
            ========================================================================== */
         
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 1.5rem;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .timeline-item:hover {
-            border-color: var(--purple);
-            box-shadow: 0 0 40px rgba(106, 76, 147, 0.15);
-        }
-
-        .timeline-header {
-            padding: 1.5rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            gap: 1rem;
-            flex-wrap: wrap;
-            transition: background 0.3s;
-        }
-
-        .timeline-header:hover {
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        .timeline-badge {
-            width: 65px;
-            height: 65px;
-            border-radius: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: white;
-            flex-shrink: 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            background: white;
-            overflow: hidden;
-            padding: 2px;
-        }
+        .timeline { display: flex; flex-direction: column; gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .timeline-item { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 1.5rem; transition: all 0.3s; cursor: pointer; }
+        .timeline-item:hover { border-color: var(--card-color, var(--purple)); box-shadow: 0 10px 30px rgba(0,0,0,0.2); transform: translateY(-3px); background: rgba(255,255,255,0.03); }
+        .timeline-header { padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
         
-        .timeline-badge img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        .timeline-badge {
+            width: 65px; height: 65px; border-radius: 1.2rem; display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-display); font-size: 1.2rem; font-weight: 900; color: white; flex-shrink: 0; box-shadow: 0 5px 20px rgba(0,0,0,0.3); background: white; overflow: hidden; padding: 2px;
         }
+        .timeline-badge img { width: 100%; height: 100%; object-fit: contain; }
+        .timeline-badge.no-logo { padding: 0; }
 
-        .timeline-badge.no-logo {
-            background: linear-gradient(135deg, var(--teal), var(--purple));
-            padding: 0;
-        }
-
-        .timeline-info h3 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.4rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .timeline-subtitle {
-            color: var(--purple);
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .timeline-count {
-            padding: 0.5rem 1.2rem;
-            background: rgba(106, 76, 147, 0.15);
-            border: 1px solid rgba(106, 76, 147, 0.3);
-            border-radius: 2rem;
-            color: var(--purple);
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .timeline-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.6s ease;
-        }
-
-        .timeline-content.active {
-            max-height: 15000px;
-        }
-
-        .timeline-body {
-            padding: 0 2rem 2rem 2rem;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .category-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 1.2rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .category-card:hover {
-            border-color: var(--orange);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 30px rgba(255, 107, 53, 0.2);
-            transform: none;
-        }
-
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .category-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .category-card h4 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .category-courses {
-            list-style: none;
-        }
-
-        .category-courses li {
-            padding: 0.7rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            gap: 0.6rem;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            align-items: flex-start;
-        }
-
-        .category-courses li:last-child {
-            border-bottom: none;
-        }
-
-        .category-courses li.highlight {
-            background: rgba(255, 107, 53, 0.15);
-            padding: 0.7rem;
-            border-radius: 0.5rem;
-            color: var(--orange);
-            font-weight: 700;
-            border-bottom: none;
-        }
+        .timeline-info h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; margin-bottom: 0.2rem; }
+        .timeline-subtitle { color: var(--purple); font-weight: 600; font-size: 1rem; }
+        .timeline-count { padding: 0.5rem 1.2rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 2rem; color: var(--text-secondary); font-weight: 700; font-size: 0.9rem; }
 
         /* --- BARRE DE RECHERCHE --- */
-        .search-container {
-            max-width: 900px;
-            margin: 0 auto 3rem;
-        }
+        .search-container { max-width: 900px; margin: 0 auto 3rem; }
+        .search-wrapper { position: relative; background: var(--bg-secondary); border: 2px solid var(--glass-border); border-radius: 2rem; overflow: hidden; display: flex; align-items: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3); transition: all 0.3s; }
+        .search-wrapper:focus-within { border-color: var(--orange); box-shadow: 0 0 30px rgba(255, 107, 53, 0.3); }
+        .search-icon { margin-left: 1.5rem; color: var(--orange); }
+        .search-input { width: 100%; padding: 1.2rem; background: transparent; border: none; color: var(--text-primary); font-size: 1.1rem; font-family: var(--font-body); outline: none; }
+        .search-results { text-align: center; margin-top: 1rem; padding: 0.5rem 1.5rem; background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(0, 212, 170, 0.15)); border-radius: 2rem; display: inline-block; color: var(--orange); font-weight: 700; }
 
-        .search-wrapper {
-            position: relative;
-            background: var(--bg-secondary);
-            border: 2px solid var(--glass-border);
-            border-radius: 2rem;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            transition: all 0.3s;
-        }
+        /* --- AUTRES SECTIONS (ENGAGEMENT, AMBITION, FAQ) --- */
+        .engagement-section { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 2rem; padding: 4rem 2rem; text-align: center; max-width: 1000px; margin: 0 auto; }
+        .engagement-text { font-size: clamp(1.1rem, 2.5vw, 1.35rem); line-height: 1.8; color: var(--text-primary); max-width: 800px; margin: 0 auto 2rem; }
+        .engagement-signature { font-family: var(--font-display); font-weight: 900; font-size: 1.5rem; margin-top: 2rem; background: linear-gradient(90deg, var(--teal), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .search-wrapper:focus-within {
-            border-color: var(--orange);
-            box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
-        }
-
-        .search-icon {
-            margin-left: 1.5rem;
-            color: var(--orange);
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 1.2rem;
-            background: transparent;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            font-family: var(--font-body);
-            outline: none;
-        }
-
-        .search-results {
-            text-align: center;
-            margin-top: 1rem;
-            padding: 0.5rem 1.5rem;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(0, 212, 170, 0.15));
-            border-radius: 2rem;
-            display: inline-block;
-            color: var(--orange);
-            font-weight: 700;
-        }
-
-        /* --- SECTION ENGAGEMENT --- */
-        .engagement-section {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 2rem;
-            padding: 4rem 2rem;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .engagement-text {
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-            line-height: 1.8;
-            color: var(--text-primary);
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-
-        .engagement-signature {
-            font-family: var(--font-display);
-            font-weight: 900;
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            background: linear-gradient(90deg, var(--teal), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* --- SECTION AMBITION --- */
-        .ambition-section {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-left: 5px solid var(--orange);
-            border-radius: 2rem;
-            padding: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ambition-header h3 {
-            font-family: var(--font-display);
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .ambition-subtitle {
-            font-size: 1.2rem;
-            color: var(--orange);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .ambition-text {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
-
-        .ambition-text strong {
-            color: var(--text-primary);
-            font-weight: 700;
-        }
+        .ambition-section { background: var(--glass-bg); border: 1px solid var(--glass-border); border-left: 5px solid var(--orange); border-radius: 2rem; padding: 3rem; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        .ambition-header h3 { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-primary); }
+        .ambition-subtitle { font-size: 1.2rem; color: var(--orange); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .ambition-text { font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary); }
+        .ambition-text strong { color: var(--text-primary); font-weight: 700; }
 
         @media (min-width: 900px) {
-            .ambition-section {
-                flex-direction: row;
-                align-items: center;
-                text-align: left;
-            }
-            .ambition-header {
-                flex: 1;
-                border-right: 1px solid var(--glass-border);
-                padding-right: 2rem;
-            }
-            .ambition-body {
-                flex: 2;
-                padding-left: 2rem;
-            }
+            .ambition-section { flex-direction: row; align-items: center; text-align: left; }
+            .ambition-header { flex: 1; border-right: 1px solid var(--glass-border); padding-right: 2rem; }
+            .ambition-body { flex: 2; padding-left: 2rem; }
         }
-        
-        @media (max-width: 899px) {
-            .ambition-header {
-                border-bottom: 1px solid var(--glass-border);
-                padding-bottom: 1.5rem;
-                text-align: center;
-            }
-            .ambition-body {
-                padding-top: 0.5rem;
-            }
-        }
+
+        .faq-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        @media (min-width: 768px) { .faq-grid { grid-template-columns: repeat(2, 1fr); } }
+        .faq-item { cursor: pointer; transition: all 0.3s ease; padding: 0; }
+        .faq-item:hover { border-color: var(--teal); background: rgba(255, 255, 255, 0.05); }
+        .faq-header { padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+        .faq-question { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--text-primary); }
+        .faq-toggle-icon { transition: transform 0.3s ease; color: var(--text-secondary); }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0, 1, 0, 1); }
+        .faq-body { padding: 0 1.5rem 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1rem; }
+        .faq-item.active { border-color: var(--orange); background: rgba(255, 255, 255, 0.08); }
+        .faq-item.active .faq-toggle-icon { transform: rotate(45deg); color: var(--orange); }
+        .faq-item.active .faq-content { max-height: 300px; transition: max-height 0.4s ease-in-out; }
 
         /* ==========================================================================
-           11. SECTION FAQ
+           9. FOOTER & DOCK
            ========================================================================== */
         
-        .faq-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        footer { padding: 6rem 1rem; text-align: center; border-top: 1px solid var(--glass-border); margin-top: 6rem; background: linear-gradient(to top, var(--bg-secondary), transparent); }
+        footer h3 { font-family: var(--font-display); font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; }
+        .footer-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+        .copyright { color: var(--text-secondary); opacity: 0.6; }
 
-        @media (min-width: 768px) {
-            .faq-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .faq-item {
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 0;
-        }
-
-        .faq-item:hover {
-            border-color: var(--teal);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .faq-header {
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .faq-question {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-primary);
-        }
-
-        .faq-toggle-icon {
-            transition: transform 0.3s ease;
-            color: var(--text-secondary);
-        }
-
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
-        }
-
-        .faq-body {
-            padding: 0 1.5rem 1.5rem 1.5rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 0.95rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 1rem;
-        }
-
-        .faq-item.active {
-            border-color: var(--orange);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .faq-item.active .faq-toggle-icon {
-            transform: rotate(45deg);
-            color: var(--orange);
-        }
-
-        .faq-item.active .faq-content {
-            max-height: 300px;
-            transition: max-height 0.4s ease-in-out;
-        }
-
-        /* ==========================================================================
-           9. FOOTER
-           ========================================================================== */
-        
-        footer {
-            padding: 6rem 1rem;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-            margin-top: 6rem;
-            background: linear-gradient(to top, var(--bg-secondary), transparent);
-        }
-
-        footer h3 {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2.5rem;
-        }
-
-        .copyright {
-            color: var(--text-secondary);
-            opacity: 0.6;
-        }
-
-        /* ==========================================================================
-           10. DOCK NAVIGATION
-           ========================================================================== */
-        
         .dock-nav {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
-            
-            background: var(--dock-bg);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid var(--dock-border);
-            border-radius: 100px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-            
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 1000;
+            display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+            background: var(--dock-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--dock-border); border-radius: 100px; box-shadow: 0 20px 50px rgba(0,0,0,0.4);
             transition: all 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
         }
-
-        .dock-nav:hover {
-            transform: translateX(-50%) scale(1.03);
-        }
-
+        .dock-nav:hover { transform: translateX(-50%) scale(1.03); }
         .dock-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-secondary);
+            text-decoration: none; width: 55px; height: 55px; border-radius: 50%; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative;
         }
-
-        .dock-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            color: var(--text-primary);
-            transform: translateY(-15px) scale(1.2);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            z-index: 10;
-        }
-
-        .dock-item.active {
-            color: white;
-            background: linear-gradient(135deg, var(--orange), var(--pink));
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
-            transform: translateY(-5px);
-        }
-
-        .dock-item i {
-            width: 24px;
-            height: 24px;
-            transition: all 0.3s;
-        }
-
+        .dock-item:hover { background: rgba(255, 255, 255, 0.15); color: var(--text-primary); transform: translateY(-15px) scale(1.2); box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 10; }
+        .dock-item.active { color: white; background: linear-gradient(135deg, var(--orange), var(--pink)); box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5); transform: translateY(-5px); }
+        .dock-item i { width: 24px; height: 24px; transition: all 0.3s; }
         .dock-item span {
-            position: absolute;
-            top: -45px;
-            background: rgba(0,0,0,0.9);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s;
-            pointer-events: none;
-            white-space: nowrap;
-            backdrop-filter: blur(5px);
+            position: absolute; top: -45px; background: rgba(0,0,0,0.9); color: white; padding: 5px 12px; border-radius: 12px;
+            font-size: 0.8rem; font-weight: 600; opacity: 0; transform: translateY(10px); transition: all 0.3s; pointer-events: none; white-space: nowrap; backdrop-filter: blur(5px);
         }
+        .dock-item:hover span { opacity: 1; transform: translateY(0); }
 
-        .dock-item:hover span {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- CONTROL PANEL --- */
-        .controls-panel {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 100;
-            display: flex;
-            gap: 0.8rem;
-        }
-
+        .controls-panel { position: fixed; top: 2rem; right: 2rem; z-index: 100; display: flex; gap: 0.8rem; }
         .control-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.4rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 2rem;
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            display: flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.4rem; background: var(--glass-bg);
+            border: 1px solid var(--glass-border); border-radius: 2rem; color: var(--text-primary); font-family: var(--font-body);
+            font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(10px);
         }
-
-        .control-btn:hover {
-            background: rgba(255, 107, 53, 0.15);
-            border-color: var(--orange);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
-        }
+        .control-btn:hover { background: rgba(255, 107, 53, 0.15); border-color: var(--orange); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2); }
 
         .hidden { display: none; }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* --- MEDIA QUERIES --- */
         @media (max-width: 640px) {
             .hero-title { font-size: 2.8rem; }
             .controls-panel { top: 1rem; right: 1rem; gap: 0.5rem; }
             .control-btn span { display: none; }
             .control-btn { padding: 0.8rem; }
-            
-            .dock-nav { 
-                padding: 8px 10px; 
-                bottom: 20px; 
-                width: 95%; 
-                justify-content: space-between;
-            }
+            .dock-nav { padding: 8px 10px; bottom: 20px; width: 95%; justify-content: space-between; }
             .dock-item { width: 42px; height: 42px; }
             .dock-item span { display: none; }
-            
-            .timeline-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-                padding: 1.5rem 1rem;
-            }
-            
-            .timeline-header > div:first-child {
-                width: 100%;
-                justify-content: flex-start;
-            }
-            
-            .timeline-header > div:last-child {
-                width: 100%;
-                justify-content: space-between;
-                margin-top: 0.5rem;
-            }
-            
-            .timeline-badge {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .timeline-info h3 {
-                font-size: 1.2rem;
-            }
-
-            .timeline-body {
-                padding: 0 0.5rem 1.5rem 0.5rem;
-            }
-            
-            .categories-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
+            .timeline-header { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem 1rem; }
+            .timeline-header > div:first-child { width: 100%; justify-content: flex-start; }
+            .timeline-header > div:last-child { width: 100%; justify-content: space-between; margin-top: 0.5rem; }
+            .timeline-badge { width: 50px; height: 50px; }
+            .timeline-info h3 { font-size: 1.2rem; }
+            .exp-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .exp-action { align-self: flex-end; margin-top: -30px; }
         }
 
         /* --- SOBRE MODE OVERRIDES --- */
-        body.sober-mode .orb, 
-        body.sober-mode .cursor-glow { 
-            display: none !important; 
-        }
-        
-        body.sober-mode .gradient-text {
-            background: none;
-            -webkit-text-fill-color: var(--text-primary);
-            color: var(--text-primary);
-            filter: none;
-        }
-        
-        body.sober-mode .profile-image {
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            background: white;
-            border-color: transparent;
-            animation: none;
-        }
-
-        body.sober-mode .btn-primary {
-            background: #1d1d1f;
-            color: white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        body.sober-mode .category-card:hover {
-            transform: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            background: white;
-            border-color: rgba(0,0,0,0.1);
-        }
+        body.sober-mode .orb, body.sober-mode .cursor-glow { display: none !important; }
+        body.sober-mode .gradient-text { background: none; -webkit-text-fill-color: var(--text-primary); color: var(--text-primary); filter: none; }
+        body.sober-mode .profile-image { box-shadow: 0 10px 40px rgba(0,0,0,0.1); background: white; border-color: transparent; animation: none; }
+        body.sober-mode .btn-primary { background: #1d1d1f; color: white; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        body.sober-mode .category-card:hover { transform: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05); background: white; border-color: rgba(0,0,0,0.1); }
     </style>
 </head>
 <body id="home">
     
+    <!-- MODAL UNIFIÉE (Pour Atouts, Expériences et Formations) -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">
@@ -1463,12 +502,10 @@
                     </div>
                 </div>
 
-                <!-- JOB TITLE EN H1 EXACTEMENT COMME DEMANDÉ -->
                 <h1 class="hero-title">
                     <span class="gradient-text" data-translate="hero_badge">PMO / CHEF DE PROJET JUNIOR - GOUVERNANCE & DATA</span>
                 </h1>
 
-                <!-- NOM EN SECOND PLAN -->
                 <div style="font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 700; color: var(--text-secondary); margin-bottom: 2rem; letter-spacing: 0.1em; text-transform: uppercase;">
                     FLORIAN BOUCHART
                 </div>
@@ -1495,6 +532,7 @@
         </a>
     </section>
 
+    <!-- SECTION EXPÉRIENCES (MODAL MODE) -->
     <section id="parcours-pro">
         <div class="container">
             <div class="section-header reveal">
@@ -1504,121 +542,152 @@
 
             <div class="experience-grid">
                 <!-- GRDF -->
-                <div class="experience-card card-glass reveal">
+                <div class="experience-card card-glass reveal" style="--card-color: var(--orange);" onclick="openExpModal(this, 'var(--orange)')">
                     <div class="exp-header">
                         <div class="exp-icon">
                             <img src="https://image2url.com/r2/default/images/1770845415458-fa73a2c3-87e8-43ff-8628-6fc1cfc63e5d.png" alt="GRDF Logo">
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--orange);" data-translate="exp_grdf_title">Chargé de Portefeuille & Projets (Alternance)</h3>
+                            <h3 data-translate="exp_grdf_title">Chargé de Portefeuille & Projets (Alternance)</h3>
                             <div class="exp-period" data-translate="exp_grdf_period">2023 - 2026 • 3 ans</div>
-                            <div class="exp-company" style="color: var(--orange);">GRDF - Lille, France</div>
+                            <div class="exp-company">GRDF - Lille, France</div>
                         </div>
+                        <div class="exp-action"><i data-lucide="external-link" width="20"></i></div>
                     </div>
-                    <p class="exp-description" data-translate="exp_grdf_desc">
-                        Pilotage de la relation avec un portefeuille de collectivités locales (communes, EPCI). Suivi des contrats de concession, analyse des investissements et des performances, et production de reportings exécutifs pour les instances décisionnelles.
-                    </p>
-                    <div class="exp-tags">
-                        <div class="exp-tag" data-translate="tag_kpi">Reporting & Data</div>
-                        <div class="exp-tag" data-translate="tag_contracts">Suivi de concession</div>
-                        <div class="exp-tag" data-translate="tag_relations">Gestion Stakeholders</div>
-                        <div class="exp-tag" data-translate="tag_reporting">Gouvernance</div>
+                    <div class="exp-hidden-data" style="display: none;">
+                        <div class="exp-desc" data-translate="exp_grdf_desc">
+                            <ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'>
+                                <li><strong>Gouvernance & Automatisation :</strong> Création d'outils (VBA, Excel) pour automatiser la génération de <strong>88 contrats simultanés</strong>.</li>
+                                <li><strong>Pilotage Financier :</strong> Études de rentabilité et suivi d'un portefeuille d'investissements allant jusqu'à <strong>800 000 €</strong>.</li>
+                                <li><strong>Delivery & Stakeholders :</strong> Déploiement de la signature électronique (réduction du Time-to-Market) et gestion de la relation avec <strong>98 communes</strong>.</li>
+                            </ul>
+                        </div>
+                        <div class="exp-tags">
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_kpi">Reporting & Data</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_contracts">Suivi de concession</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_relations">Gestion Stakeholders</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_reporting">Gouvernance</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- DESRÊVES -->
-                <div class="experience-card card-glass reveal">
+                <!-- DESREVES -->
+                <div class="experience-card card-glass reveal" style="--card-color: var(--teal);" onclick="openExpModal(this, 'var(--teal)')">
                     <div class="exp-header">
                         <div class="exp-icon">
                             <img src="https://image2url.com/r2/default/images/1770846729486-db125a45-ffa2-476b-999b-dd9ab99bef16.png" alt="Desrèves Logo">
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--teal);" data-translate="exp_desreves_title">Créateur & Chef de Projet Entrepreneurial</h3>
+                            <h3 data-translate="exp_desreves_title">Créateur & Chef de Projet Entrepreneurial</h3>
                             <div class="exp-period" data-translate="exp_desreves_period">2024 - Aujourd'hui</div>
-                            <div class="exp-company" style="color: var(--teal);" data-translate="exp_desreves_comp">Desrèves - Marque de vêtements</div>
+                            <div class="exp-company" data-translate="exp_desreves_comp">Desrèves - Marque de vêtements</div>
                         </div>
+                        <div class="exp-action"><i data-lucide="external-link" width="20"></i></div>
                     </div>
-                    <p class="exp-description" data-translate="exp_desreves_desc">
-                        Gestion complète du cycle de vie d'un projet de création d'entreprise. De la planification stratégique (roadmap, budget) à l'exécution opérationnelle (sourcing, dev web Liquid/CSS, lancement marketing). Forte orientation ROI.
-                    </p>
-                    <div class="exp-tags">
-                        <div class="exp-tag" data-translate="tag_entrepreneurship">Planification (Roadmap)</div>
-                        <div class="exp-tag" data-translate="tag_product_design">Gestion de Budget</div>
-                        <div class="exp-tag" data-translate="tag_web_dev">Exécution opérationnelle</div>
-                        <div class="exp-tag" data-translate="tag_suppliers">Coordination Prestataires</div>
+                    <div class="exp-hidden-data" style="display: none;">
+                        <div class="exp-desc" data-translate="exp_desreves_desc">
+                            <ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'>
+                                <li><strong>Planification & Budget :</strong> Définition de la roadmap stratégique, lancement de MVP et pilotage du budget de lancement.</li>
+                                <li><strong>Exécution Opérationnelle :</strong> Gestion complète du delivery (sourcing de partenaires, développement Liquid/CSS, marketing).</li>
+                                <li><strong>Acquisition & Data :</strong> Suivi analytique de l'acquisition (pics à <strong>100k visites/mois</strong>) et orientation ROI continue.</li>
+                            </ul>
+                        </div>
+                        <div class="exp-tags">
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_entrepreneurship">Planification (Roadmap)</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_product_design">Gestion de Budget</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_web_dev">Exécution opérationnelle</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_suppliers">Coordination Prestataires</div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- BDE -->
-                <div class="experience-card card-glass reveal">
+                <div class="experience-card card-glass reveal" style="--card-color: var(--purple);" onclick="openExpModal(this, 'var(--purple)')">
                     <div class="exp-header">
                         <div class="exp-icon">
                             <img src="https://image2url.com/r2/default/images/1770848861445-5b22e6f8-0fae-469e-8cc1-2bfe07855dca.png" alt="BDE IAE Logo">
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--purple);" data-translate="exp_bde_title">Directeur de Projet Associatif (Président)</h3>
+                            <h3 data-translate="exp_bde_title">Directeur de Projet Associatif (Président)</h3>
                             <div class="exp-period" data-translate="exp_bde_period">2022 - 2025 • 3 ans</div>
-                            <div class="exp-company" style="color: var(--purple);">BDE IAE Valenciennes</div>
+                            <div class="exp-company">BDE IAE Valenciennes</div>
                         </div>
+                        <div class="exp-action"><i data-lucide="external-link" width="20"></i></div>
                     </div>
-                    <p class="exp-description" data-translate="exp_bde_desc">
-                        Structuration et pilotage de l'association. Management transversal d'une équipe bénévole, contrôle budgétaire strict et gestion des risques (RAID) sur des événements à fort trafic étudiant.
-                    </p>
-                    <div class="exp-tags">
-                        <div class="exp-tag" data-translate="tag_leadership">Structuration</div>
-                        <div class="exp-tag" data-translate="tag_budget">Contrôle budgétaire</div>
-                        <div class="exp-tag" data-translate="tag_events">Gestion des risques</div>
-                        <div class="exp-tag" data-translate="tag_team_mgmt">Management transversal</div>
+                    <div class="exp-hidden-data" style="display: none;">
+                        <div class="exp-desc" data-translate="exp_bde_desc">
+                            <ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'>
+                                <li><strong>Structuration & Pilotage :</strong> Direction transversale d'<strong>une trentaine de bénévoles</strong> sans lien de subordination.</li>
+                                <li><strong>Contrôle Budgétaire :</strong> Gestion stricte d'un budget global de <strong>17 000 €</strong> (générant 20k€ de CA).</li>
+                                <li><strong>Gestion des Risques (RAID) :</strong> Anticipation et mitigation des risques sur des projets événementiels complexes et lancement de projets textiles (<strong>100+ ventes</strong>).</li>
+                            </ul>
+                        </div>
+                        <div class="exp-tags">
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_leadership">Structuration</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_budget">Contrôle budgétaire</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_events">Gestion des risques</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_team_mgmt">Management transversal</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- ESPORT -->
-                <div class="experience-card card-glass reveal">
+                <!-- E-SPORT -->
+                <div class="experience-card card-glass reveal" style="--card-color: var(--pink);" onclick="openExpModal(this, 'var(--pink)')">
                     <div class="exp-header">
                         <div class="exp-icon no-img" style="background: linear-gradient(135deg, #ff006e, #d00060);">
                             <i data-lucide="gamepad-2" width="32" style="color: white;"></i>
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--pink);" data-translate="exp_esport_title">Coordinateur de Projet (E-sport)</h3>
+                            <h3 data-translate="exp_esport_title">Coordinateur de Projet (E-sport)</h3>
                             <div class="exp-period" data-translate="exp_esport_period">2018 - 2021 • Dès 15 ans</div>
-                            <div class="exp-company" style="color: var(--pink);" data-translate="exp_esport_comp">Structure Associative</div>
+                            <div class="exp-company" data-translate="exp_esport_comp">Structure Associative</div>
                         </div>
+                        <div class="exp-action"><i data-lucide="external-link" width="20"></i></div>
                     </div>
-                    <p class="exp-description" data-translate="exp_esport_desc">
-                        Coordination logistique et management d'équipe dans un environnement compétitif. Planification des déplacements en LAN, gestion des plannings et développement de partenariats stratégiques.
-                    </p>
-                    <div class="exp-tags">
-                        <div class="exp-tag" data-translate="tag_early_entrepreneurship">Coordination d'équipe</div>
-                        <div class="exp-tag" data-translate="tag_management">Planification</div>
-                        <div class="exp-tag" data-translate="tag_event_org">Logistique événementielle</div>
+                    <div class="exp-hidden-data" style="display: none;">
+                        <div class="exp-desc" data-translate="exp_esport_desc">
+                            <ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'>
+                                <li><strong>Coordination d'Équipe :</strong> Management à distance d'un roster de <strong>15 joueurs</strong> compétitifs.</li>
+                                <li><strong>Logistique & Événementiel :</strong> Planification des déplacements en LAN (Lyon e-Sport) et synchronisation des plannings.</li>
+                                <li><strong>Budget & Partenariats :</strong> Organisation de tournois dotés de cash prize (jusqu'à <strong>1000€</strong>) et stratégie d'acquisition d'audience.</li>
+                            </ul>
+                        </div>
+                        <div class="exp-tags">
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_early_entrepreneurship">Coordination d'équipe</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_management">Planification</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_event_org">Logistique événementielle</div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- INTERNATIONAL -->
-                <div class="experience-card card-glass reveal">
+                <div class="experience-card card-glass reveal" style="--card-color: var(--yellow);" onclick="openExpModal(this, 'var(--yellow)')">
                     <div class="exp-header">
                         <div class="exp-icon no-img" style="background: linear-gradient(135deg, #ffbe0b, #ff9e00);">
                             <i data-lucide="globe" width="32" style="color: white;"></i>
                         </div>
                         <div class="exp-info">
-                            <h3 style="color: var(--yellow);" data-translate="exp_intl_title">Projets Transverses Internationaux</h3>
+                            <h3 data-translate="exp_intl_title">Projets Transverses Internationaux</h3>
                             <div class="exp-period">2024</div>
-                            <div class="exp-company" style="color: var(--yellow);" data-translate="exp_intl_comp">Finlande & Roumanie</div>
+                            <div class="exp-company" data-translate="exp_intl_comp">Finlande & Roumanie</div>
                         </div>
+                        <div class="exp-action"><i data-lucide="external-link" width="20"></i></div>
                     </div>
-                    <div class="exp-description">
-                        <p style="margin-bottom: 1rem;" data-translate="exp_intl_desc">
-                            Programmes intensifs en environnement multiculturel. Mise en pratique de la gestion de projet en équipe interdisciplinaire (Design Thinking, prototypage de solutions organisationnelles).
-                        </p>
-                        <div style="display: flex; gap: 15px; margin-top: 15px;">
-                            <img src="https://image2url.com/r2/default/images/1770845625436-a5d78456-5192-4fa3-acb0-7b68d63a9443.png" alt="Vaasa Logo" style="height: 40px; background: white; padding: 2px; border-radius: 8px;">
-                            <img src="https://image2url.com/r2/default/images/1770845505974-51235c8a-89de-4332-ab3b-4ff65902abd0.png" alt="UBBFSEGA Logo" style="height: 40px; background: white; padding: 2px; border-radius: 8px;">
+                    <div class="exp-hidden-data" style="display: none;">
+                        <div class="exp-desc">
+                            <p style="margin-bottom: 1.5rem; line-height: 1.8;" data-translate="exp_intl_desc">
+                                Programmes intensifs en environnement multiculturel. Mise en pratique de la gestion de projet en équipe interdisciplinaire (Design Thinking, prototypage de solutions organisationnelles).
+                            </p>
+                            <div style="display: flex; gap: 15px; margin-top: 15px; margin-bottom: 2rem;">
+                                <img src="https://image2url.com/r2/default/images/1770845625436-a5d78456-5192-4fa3-acb0-7b68d63a9443.png" alt="Vaasa Logo" style="height: 40px; background: white; padding: 2px; border-radius: 8px;">
+                                <img src="https://image2url.com/r2/default/images/1770845505974-51235c8a-89de-4332-ab3b-4ff65902abd0.png" alt="UBBFSEGA Logo" style="height: 40px; background: white; padding: 2px; border-radius: 8px;">
+                            </div>
                         </div>
-                    </div>
-                    <div class="exp-tags">
-                        <div class="exp-tag" data-translate="tag_mobility">Environnement international</div>
-                        <div class="exp-tag" data-translate="tag_innovation">Méthodologies agiles</div>
-                        <div class="exp-tag" data-translate="tag_design_thinking">Collaboration inter-équipes</div>
+                        <div class="exp-tags">
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_mobility">Environnement international</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_innovation">Méthodologies agiles</div>
+                            <div class="exp-tag" style="background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem;" data-translate="tag_design_thinking">Collaboration inter-équipes</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1690,27 +759,27 @@
                         <span class="trait-badge green" data-translate="lbl_forces">FORCES (ASSETS)</span>
                     </div>
                     <div class="trait-list">
-                        <div class="trait-item" onclick="openDetail('force_1')">
+                        <div class="trait-item" onclick="openTrait('force_1', 'var(--teal)')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
                             <span data-translate="force_1"><strong>Vision Transversale</strong> — Capacité à lier enjeux globaux et réalités opérationnelles.</span>
                         </div>
-                        <div class="trait-item" onclick="openDetail('force_2')">
+                        <div class="trait-item" onclick="openTrait('force_2', 'var(--teal)')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
                             <span data-translate="force_2"><strong>Pragmatisme & ROI</strong> — Pilotage orienté création de valeur et efficacité.</span>
                         </div>
-                        <div class="trait-item" onclick="openDetail('force_3')">
+                        <div class="trait-item" onclick="openTrait('force_3', 'var(--teal)')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
                             <span data-translate="force_3"><strong>Leadership d'Influence</strong> — Engager les équipes sans lien de subordination.</span>
                         </div>
-                        <div class="trait-item" onclick="openDetail('force_4')">
+                        <div class="trait-item" onclick="openTrait('force_4', 'var(--teal)')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
                             <span data-translate="force_4"><strong>Autonomie (0 to 1)</strong> — Habitué à structurer des projets à partir d'une page blanche.</span>
                         </div>
-                        <div class="trait-item" onclick="openDetail('force_5')">
+                        <div class="trait-item" onclick="openTrait('force_5', 'var(--teal)')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
                             <span data-translate="force_5"><strong>Communication Claire</strong> — Traduire les enjeux complexes en points synthétiques.</span>
                         </div>
-                        <div class="trait-item" onclick="openDetail('force_6')">
+                        <div class="trait-item" onclick="openTrait('force_6', 'var(--teal)')">
                             <i data-lucide="zap" width="20" style="color: var(--teal);"></i>
                             <span data-translate="force_6"><strong>Esprit Data-Driven</strong> — Fonder les décisions sur l'analyse de données factuelles.</span>
                         </div>
@@ -1723,27 +792,27 @@
                         <span class="trait-badge amber" data-translate="lbl_weaknesses">POINTS D'ATTENTION (REALITY CHECK)</span>
                     </div>
                     <div class="trait-list">
-                        <div class="trait-item" onclick="openDetail('weak_1')">
+                        <div class="trait-item" onclick="openTrait('weak_1', 'var(--yellow)')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
                             <span data-translate="weak_1"><strong>Besoin de sens</strong> — Je m'investis pleinement si je comprends le "Pourquoi" d'un projet.</span>
                         </div>
-                        <div class="trait-item" onclick="openDetail('weak_2')">
+                        <div class="trait-item" onclick="openTrait('weak_2', 'var(--yellow)')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
                             <span data-translate="weak_2"><strong>Biais d'action</strong> — L'entrepreneur en moi veut avancer vite ; j'apprends à temporiser face aux process internes.</span>
                         </div>
-                        <div class="trait-item" onclick="openDetail('weak_3')">
+                        <div class="trait-item" onclick="openTrait('weak_3', 'var(--yellow)')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
                             <span data-translate="weak_3"><strong>Communication Directe</strong> — Je privilégie l'efficacité, nécessitant parfois d'adapter ma forme en milieu politique.</span>
                         </div>
-                        <div class="trait-item" onclick="openDetail('weak_4')">
+                        <div class="trait-item" onclick="openTrait('weak_4', 'var(--yellow)')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
                             <span data-translate="weak_4"><strong>L'art de la délégation</strong> — Ayant souvent porté mes projets seul, j'aiguise ma posture de "faire faire".</span>
                         </div>
-                        <div class="trait-item" onclick="openDetail('weak_5')">
+                        <div class="trait-item" onclick="openTrait('weak_5', 'var(--yellow)')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
                             <span data-translate="weak_5"><strong>Onboarding Outils ERP</strong> — Je maîtrise Notion/Linear/IA, mais devrai m'adapter à vos ERP ou instances spécifiques.</span>
                         </div>
-                        <div class="trait-item" onclick="openDetail('weak_6')">
+                        <div class="trait-item" onclick="openTrait('weak_6', 'var(--yellow)')">
                             <i data-lucide="triangle-alert" width="20" style="color: var(--yellow);"></i>
                             <span data-translate="weak_6"><strong>Gestion du flou</strong> — Je ressens le besoin de structurer rapidement les phases de forte incertitude.</span>
                         </div>
@@ -1850,6 +919,7 @@
         </div>
     </section>
 
+    <!-- SECTION FORMATION (Désormais en mode Popup) -->
     <section id="formation">
         <div class="container">
             <div class="section-header reveal">
@@ -1902,7 +972,6 @@
             </div>
 
             <div class="faq-grid">
-                <!-- Q1 : Disponibilité -->
                 <div class="faq-item card-glass reveal">
                     <div class="faq-header" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -1918,7 +987,6 @@
                     </div>
                 </div>
 
-                <!-- Q2 : Mobilité -->
                 <div class="faq-item card-glass reveal">
                     <div class="faq-header" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -1934,7 +1002,6 @@
                     </div>
                 </div>
 
-                <!-- Q3 : Contrat -->
                 <div class="faq-item card-glass reveal">
                     <div class="faq-header" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -1950,7 +1017,6 @@
                     </div>
                 </div>
 
-                <!-- Q4 : Télétravail -->
                 <div class="faq-item card-glass reveal">
                     <div class="faq-header" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -1966,7 +1032,6 @@
                     </div>
                 </div>
 
-                 <!-- Q5 : Salaire -->
                  <div class="faq-item card-glass reveal" style="grid-column: 1 / -1;">
                     <div class="faq-header" onclick="toggleFaq(this)">
                         <div class="faq-question">
@@ -2050,7 +1115,7 @@
         let currentLang = 'fr';
         let soberMode = false;
 
-        // DICTIONNAIRE DE TRADUCTION ET DONNÉES COMPLÈTES (FORMAT EXPANSÉ)
+        // DICTIONNAIRE DE TRADUCTION ET DONNÉES COMPLÈTES (FORMAT EXPANSÉ PMO)
         const translations = {
             fr: {
                 sober_mode: "Clair",
@@ -2070,7 +1135,7 @@
                 
                 exp_grdf_title: "Chargé de Portefeuille & Projets (Alternance)",
                 exp_grdf_period: "2023 - 2026 • 3 ans",
-                exp_grdf_desc: "Pilotage de la relation avec un portefeuille de collectivités locales (communes, EPCI). Suivi des contrats de concession, analyse des investissements et performances, et production de reportings exécutifs pour les instances décisionnelles et les élus.",
+                exp_grdf_desc: "<ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'><li><strong>Gouvernance & Automatisation :</strong> Création d'outils (VBA, Excel) pour automatiser la génération de <strong>88 contrats simultanés</strong>.</li><li><strong>Pilotage Financier :</strong> Études de rentabilité et suivi d'un portefeuille d'investissements allant jusqu'à <strong>800 000 €</strong>.</li><li><strong>Delivery & Stakeholders :</strong> Déploiement de la signature électronique (réduction du Time-to-Market) et gestion de la relation avec <strong>98 communes</strong>.</li></ul>",
                 tag_kpi: "Reporting & Data",
                 tag_contracts: "Suivi de concession",
                 tag_relations: "Gestion Stakeholders",
@@ -2079,7 +1144,7 @@
                 exp_desreves_title: "Créateur & Chef de Projet Entrepreneurial",
                 exp_desreves_period: "2024 - Aujourd'hui",
                 exp_desreves_comp: "Desrèves - Marque de vêtements",
-                exp_desreves_desc: "Gestion complète du cycle de vie d'un projet de création d'entreprise. De la planification stratégique (roadmap, budget) à l'exécution opérationnelle (sourcing, dev web Liquid/CSS, lancement marketing). Forte orientation ROI.",
+                exp_desreves_desc: "<ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'><li><strong>Planification & Budget :</strong> Définition de la roadmap stratégique, lancement de MVP et pilotage du budget de lancement.</li><li><strong>Exécution Opérationnelle :</strong> Gestion complète du delivery (sourcing de partenaires, développement Liquid/CSS, marketing).</li><li><strong>Acquisition & Data :</strong> Suivi analytique de l'acquisition (pics à <strong>100k visites/mois</strong>) et orientation ROI continue.</li></ul>",
                 tag_entrepreneurship: "Planification (Roadmap)",
                 tag_product_design: "Gestion de Budget",
                 tag_web_dev: "Exécution opérationnelle",
@@ -2088,7 +1153,7 @@
                 
                 exp_bde_title: "Directeur de Projet Associatif (Président)",
                 exp_bde_period: "2022 - 2025 • 3 ans",
-                exp_bde_desc: "Structuration et pilotage de l'association. Management transversal d'une équipe bénévole, contrôle budgétaire strict et gestion des risques (RAID) sur des événements à fort trafic étudiant.",
+                exp_bde_desc: "<ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'><li><strong>Structuration & Pilotage :</strong> Direction transversale d'<strong>une trentaine de bénévoles</strong> sans lien de subordination.</li><li><strong>Contrôle Budgétaire :</strong> Gestion stricte d'un budget global de <strong>17 000 €</strong> (générant 20k€ de CA).</li><li><strong>Gestion des Risques (RAID) :</strong> Anticipation et mitigation des risques sur des projets événementiels complexes et lancement de projets textiles (<strong>100+ ventes</strong>).</li></ul>",
                 tag_leadership: "Structuration",
                 tag_budget: "Contrôle budgétaire",
                 tag_events: "Gestion des risques",
@@ -2097,7 +1162,7 @@
                 exp_esport_title: "Coordinateur de Projet (E-sport)",
                 exp_esport_period: "2018 - 2021 • Dès 15 ans",
                 exp_esport_comp: "Structure Associative",
-                exp_esport_desc: "Coordination logistique et management d'équipe dans un environnement compétitif. Planification des déplacements en LAN, gestion des plannings et développement de partenariats stratégiques.",
+                exp_esport_desc: "<ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'><li><strong>Coordination d'Équipe :</strong> Management à distance d'un roster de <strong>15 joueurs</strong> compétitifs.</li><li><strong>Logistique & Événementiel :</strong> Planification des déplacements en LAN (Lyon e-Sport) et synchronisation des plannings.</li><li><strong>Budget & Partenariats :</strong> Organisation de tournois dotés de cash prize (jusqu'à <strong>1000€</strong>) et stratégie d'acquisition d'audience.</li></ul>",
                 tag_early_entrepreneurship: "Coordination d'équipe",
                 tag_management: "Planification",
                 tag_event_org: "Logistique événementielle",
@@ -2215,7 +1280,7 @@
                 
                 exp_grdf_title: "Project & Portfolio Manager (Apprenticeship)",
                 exp_grdf_period: "2023 - 2026 • 3 years",
-                exp_grdf_desc: "Managing relationships with a portfolio of local authorities (municipalities, EPCI). Tracking concession contracts, analyzing investments and performance, and producing executive reports for decision-making bodies and elected officials.",
+                exp_grdf_desc: "<ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'><li><strong>Governance & Automation:</strong> Built tools (VBA, Excel) to automate the generation of <strong>88 simultaneous contracts</strong>.</li><li><strong>Financial Steering:</strong> Profitability studies and tracking for an investment portfolio up to <strong>800,000€</strong>.</li><li><strong>Delivery & Stakeholders:</strong> Deployed e-signatures (reducing Time-to-Market) and managed relationships with <strong>98 municipalities</strong>.</li></ul>",
                 tag_kpi: "Reporting & Data",
                 tag_contracts: "Concession Tracking",
                 tag_relations: "Stakeholder Management",
@@ -2224,7 +1289,7 @@
                 exp_desreves_title: "Founder & Entrepreneurial Project Manager",
                 exp_desreves_period: "2024 - Present",
                 exp_desreves_comp: "Desrèves - Clothing Brand",
-                exp_desreves_desc: "Complete lifecycle management of a business creation project. From strategic planning (roadmap, budget) to operational execution (sourcing, Liquid/CSS web dev, marketing launch). Strong ROI focus.",
+                exp_desreves_desc: "<ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'><li><strong>Planning & Budget:</strong> Defined the strategic roadmap, launched MVP, and steered the launch budget.</li><li><strong>Operational Execution:</strong> Complete delivery management (partner sourcing, Liquid/CSS development, marketing).</li><li><strong>Acquisition & Data:</strong> Analytical tracking of user acquisition (peaks at <strong>100k visits/month</strong>) with continuous ROI focus.</li></ul>",
                 tag_entrepreneurship: "Planning (Roadmap)",
                 tag_product_design: "Budget Management",
                 tag_web_dev: "Operational Execution",
@@ -2233,7 +1298,7 @@
                 
                 exp_bde_title: "Associative Project Director (President)",
                 exp_bde_period: "2022 - 2025 • 3 years",
-                exp_bde_desc: "Structuring and steering the student union. Cross-functional management of a volunteer team, strict budget control, and risk management (RAID) on high-traffic student events.",
+                exp_bde_desc: "<ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'><li><strong>Structuring & Steering:</strong> Cross-functional management of <strong>30+ volunteers</strong> without subordination links.</li><li><strong>Budget Control:</strong> Strict management of a <strong>17,000€</strong> global budget (generating 20k€ in revenue).</li><li><strong>Risk Management (RAID):</strong> Anticipated and mitigated risks on complex event projects and clothing launches (<strong>100+ sales</strong>).</li></ul>",
                 tag_leadership: "Structuring",
                 tag_budget: "Budget Control",
                 tag_events: "Risk Management",
@@ -2242,7 +1307,7 @@
                 exp_esport_title: "Project Coordinator (E-sport)",
                 exp_esport_period: "2018 - 2021 • From age 15",
                 exp_esport_comp: "Associative Structure",
-                exp_esport_desc: "Logistical coordination and team management in a competitive environment. Planning LAN travel, managing schedules, and developing strategic partnerships.",
+                exp_esport_desc: "<ul style='list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;'><li><strong>Team Coordination:</strong> Remote management of a roster with <strong>15 competitive players</strong>.</li><li><strong>Logistics & Events:</strong> Planned LAN travel (Lyon e-Sport) and synchronized team schedules.</li><li><strong>Budget & Partnerships:</strong> Organized tournaments with cash prizes (up to <strong>1000€</strong>) and audience acquisition strategy.</li></ul>",
                 tag_early_entrepreneurship: "Team Coordination",
                 tag_management: "Planning",
                 tag_event_org: "Event Logistics",
@@ -2344,7 +1409,7 @@
             }
         };
 
-        // DETAILS POUR POPUP (Le texte explicatif détaillé)
+        // DETAILS POUR POPUP (Atouts PMO)
         const detailsData = {
             fr: {
                 force_1: "Je comprends les contraintes techniques, les enjeux business et les besoins utilisateurs. Je sers de traducteur pour aligner tout le monde.",
@@ -2378,599 +1443,113 @@
             }
         };
 
-        // DONNÉES ACADÉMIQUES (TIMELINE COMPLÈTE - RESTAURÉE)
+        // DONNÉES ACADÉMIQUES
         const academicData = {
             fr: [
                 {
-                    id: 'l3',
-                    title: 'Licence 3 - Management et Développement des Organisations',
-                    year: '2023-2024',
-                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
-                    gradient: 'linear-gradient(135deg, #00d4aa, #6a4c93)',
+                    id: 'l3', title: 'Licence 3 - Management et Développement des Organisations', year: '2023-2024',
+                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png', gradient: 'linear-gradient(135deg, #00d4aa, #6a4c93)',
                     categories: [
-                        {
-                            name: 'Gestion & Business',
-                            icon: 'briefcase',
-                            color: '#ff6b35',
-                            courses: [
-                                'RH et Management d\'équipe',
-                                'Marketing BtoB (Négociation)',
-                                'Marketing International',
-                                'Financement et Investissement',
-                                'Contrôle de gestion',
-                                'Management Stratégique'
-                            ]
-                        },
-                        {
-                            name: 'Stratégie Digitale',
-                            icon: 'trending-up',
-                            color: '#6a4c93',
-                            courses: [
-                                'RGPD / Marketing Digital',
-                                'Digitalisation des entreprises',
-                                'Communication Réseaux Sociaux'
-                            ]
-                        },
-                        {
-                            name: 'Juridique',
-                            icon: 'award',
-                            color: '#00d4aa',
-                            courses: [
-                                'Droit du travail',
-                                'Droit de la distribution/consommation'
-                            ]
-                        },
-                        {
-                            name: 'Outils & Tech',
-                            icon: 'code',
-                            color: '#ff006e',
-                            courses: [
-                                'Outils de création graphique',
-                                'Système d\'information pour la gestion',
-                                'Tableaux de bord',
-                                'Introduction à la programmation'
-                            ]
-                        },
-                        {
-                            name: 'Innovation & International',
-                            icon: 'globe',
-                            color: '#ffbe0b',
-                            courses: [
-                                'Innovation et Design Thinking',
-                                'Module Polytechnique (Eunice)',
-                                'Management English',
-                                'Gestion de projet et qualité',
-                                'Simulation de gestion'
-                            ]
-                        }
+                        { name: 'Gestion & Business', icon: 'briefcase', color: '#ff6b35', courses: ['RH et Management d\'équipe', 'Marketing BtoB (Négociation)', 'Marketing International', 'Financement et Investissement', 'Contrôle de gestion', 'Management Stratégique'] },
+                        { name: 'Stratégie Digitale', icon: 'trending-up', color: '#6a4c93', courses: ['RGPD / Marketing Digital', 'Digitalisation des entreprises', 'Communication Réseaux Sociaux'] },
+                        { name: 'Juridique', icon: 'award', color: '#00d4aa', courses: ['Droit du travail', 'Droit de la distribution/consommation'] },
+                        { name: 'Outils & Tech', icon: 'code', color: '#ff006e', courses: ['Outils de création graphique', 'Système d\'information pour la gestion', 'Tableaux de bord', 'Introduction à la programmation'] },
+                        { name: 'Innovation & International', icon: 'globe', color: '#ffbe0b', courses: ['Innovation et Design Thinking', 'Module Polytechnique (Eunice)', 'Management English', 'Gestion de projet et qualité', 'Simulation de gestion'] }
                     ]
                 },
                 {
-                    id: 'm1',
-                    title: 'Master 1 - Entrepreneuriat et Management de Projets',
-                    year: '2024-2025',
-                    subtitle: 'L\'expertise',
-                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
-                    gradient: 'linear-gradient(135deg, #6a4c93, #ff006e)',
+                    id: 'm1', title: 'Master 1 - Entrepreneuriat et Management de Projets', year: '2024-2025', subtitle: 'L\'expertise',
+                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png', gradient: 'linear-gradient(135deg, #6a4c93, #ff006e)',
                     categories: [
-                        {
-                            name: 'Management des Organisations',
-                            icon: 'users',
-                            color: '#6a4c93',
-                            courses: [
-                                'Comportements organisationnels',
-                                'Conduite de réunion',
-                                'Négociation avec les syndicats',
-                                'Recrutement 5.0',
-                                'Gestion de conflits',
-                                'Conduire des entretiens'
-                            ]
-                        },
-                        {
-                            name: 'Gestion de Projet Agile',
-                            icon: 'target',
-                            color: '#ff006e',
-                            courses: [
-                                'Ingénierie de projet',
-                                'Design entrepreneurial',
-                                'Approche Phygitale',
-                                'CRM',
-                                'Business Model et start-up'
-                            ]
-                        },
-                        {
-                            name: 'Finance & Performance',
-                            icon: 'bar-chart-3',
-                            color: '#00d4aa',
-                            courses: [
-                                'Management de la performance financière',
-                                'Gestion des risques (Risk agil)',
-                                'Outils financiers',
-                                'Fiscalité d\'entreprise'
-                            ]
-                        },
-                        {
-                            name: 'Environnement Légal',
-                            icon: 'award',
-                            color: '#ffbe0b',
-                            courses: [
-                                'Droit des affaires',
-                                'Droit du numérique/RGPD',
-                                'Appliquer la réglementation'
-                            ]
-                        },
-                        {
-                            name: 'Outils Numériques',
-                            icon: 'code',
-                            color: '#ff6b35',
-                            courses: [
-                                'Maîtrise Suite Adobe & Power BI',
-                                'Optimisation système d\'information',
-                                'Veille numérique',
-                                'Conception études et recherches'
-                            ]
-                        },
-                        {
-                            name: 'RSE & International',
-                            icon: 'globe',
-                            color: '#00d4aa',
-                            courses: [
-                                'Diagnostic éthique et écologique',
-                                'Management durable',
-                                'Business English (+TOEIC)',
-                                'Semaine internationale',
-                                'Développer capacités de transfert'
-                            ]
-                        }
+                        { name: 'Management des Organisations', icon: 'users', color: '#6a4c93', courses: ['Comportements organisationnels', 'Conduite de réunion', 'Négociation avec les syndicats', 'Recrutement 5.0', 'Gestion de conflits', 'Conduire des entretiens'] },
+                        { name: 'Gestion de Projet Agile', icon: 'target', color: '#ff006e', courses: ['Ingénierie de projet', 'Design entrepreneurial', 'Approche Phygitale', 'CRM', 'Business Model et start-up'] },
+                        { name: 'Finance & Performance', icon: 'bar-chart-3', color: '#00d4aa', courses: ['Management de la performance financière', 'Gestion des risques (Risk agil)', 'Outils financiers', 'Fiscalité d\'entreprise'] },
+                        { name: 'Environnement Légal', icon: 'award', color: '#ffbe0b', courses: ['Droit des affaires', 'Droit du numérique/RGPD', 'Appliquer la réglementation'] },
+                        { name: 'Outils Numériques', icon: 'code', color: '#ff6b35', courses: ['Maîtrise Suite Adobe & Power BI', 'Optimisation système d\'information', 'Veille numérique', 'Conception études et recherches'] },
+                        { name: 'RSE & International', icon: 'globe', color: '#00d4aa', courses: ['Diagnostic éthique et écologique', 'Management durable', 'Business English (+TOEIC)', 'Semaine internationale', 'Développer capacités de transfert'] }
                     ]
                 },
                 {
-                    id: 'm2',
-                    title: 'Master 2 - Entrepreneuriat et Management de Projets',
-                    year: '2025-2026',
-                    subtitle: 'La confirmation',
-                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
-                    gradient: 'linear-gradient(135deg, #ff006e, #ff6b35)',
+                    id: 'm2', title: 'Master 2 - Entrepreneuriat et Management de Projets', year: '2025-2026', subtitle: 'La confirmation',
+                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png', gradient: 'linear-gradient(135deg, #ff006e, #ff6b35)',
                     categories: [
-                        {
-                            name: 'Stratégie Avancée',
-                            icon: 'trending-up',
-                            color: '#ff6b35',
-                            courses: [
-                                'Intelligence collective',
-                                'Négociation salariale',
-                                'Indices de santé entreprise',
-                                'Conduire projets de changement',
-                                'Valoriser le potentiel d\'équipe',
-                                'Intégrer personnalités difficiles'
-                            ]
-                        },
-                        {
-                            name: 'Pilotage de Projet',
-                            icon: 'target',
-                            color: '#ff006e',
-                            courses: [
-                                'MS Project',
-                                'Manager la dimension digitale',
-                                'Amélioration continue',
-                                'Scrum Master (Préparation)',
-                                'Manager qualité'
-                            ]
-                        },
-                        {
-                            name: 'Data & Innovation',
-                            icon: 'sparkles',
-                            color: '#6a4c93',
-                            courses: [
-                                'Power BI (Traitement avancé)',
-                                'Analyse de données',
-                                'Design Thinking',
-                                'Slow Management',
-                                'Protection de l\'innovation',
-                                'Implémenter innovations managériales'
-                            ]
-                        },
-                        {
-                            name: 'Entrepreneuriat & Finance',
-                            icon: 'briefcase',
-                            color: '#00d4aa',
-                            courses: [
-                                'Business Model financier',
-                                'Réseaux d\'accompagnement',
-                                'Financer son projet',
-                                'Découverte parcours créateurs',
-                                'Mémoire de recherche'
-                            ]
-                        },
-                        {
-                            name: 'Marketing Digital',
-                            icon: 'trending-up',
-                            color: '#ffbe0b',
-                            courses: [
-                                'Marketing BtoB',
-                                'Web marketing',
-                                'Marketing digital avancé'
-                            ]
-                        }
+                        { name: 'Stratégie Avancée', icon: 'trending-up', color: '#ff6b35', courses: ['Intelligence collective', 'Négociation salariale', 'Indices de santé entreprise', 'Conduire projets de changement', 'Valoriser le potentiel d\'équipe', 'Intégrer personnalités difficiles'] },
+                        { name: 'Pilotage de Projet', icon: 'target', color: '#ff006e', courses: ['MS Project', 'Manager la dimension digitale', 'Amélioration continue', 'Scrum Master (Préparation)', 'Manager qualité'] },
+                        { name: 'Data & Innovation', icon: 'sparkles', color: '#6a4c93', courses: ['Power BI (Traitement avancé)', 'Analyse de données', 'Design Thinking', 'Slow Management', 'Protection de l\'innovation', 'Implémenter innovations managériales'] },
+                        { name: 'Entrepreneuriat & Finance', icon: 'briefcase', color: '#00d4aa', courses: ['Business Model financier', 'Réseaux d\'accompagnement', 'Financer son projet', 'Découverte parcours créateurs', 'Mémoire de recherche'] },
+                        { name: 'Marketing Digital', icon: 'trending-up', color: '#ffbe0b', courses: ['Marketing BtoB', 'Web marketing', 'Marketing digital avancé'] }
                     ]
                 },
                 {
-                    id: 'uphf',
-                    title: 'Université Polytechnique des Hauts-de-France',
-                    subtitle: 'Modules Polytechniques & Projets Transverses',
-                    year: '2023-2026',
-                    logo: 'https://image2url.com/r2/default/images/1770845782054-6aff1901-b7cb-4072-8640-c111adbd508c.png',
-                    gradient: 'linear-gradient(135deg, #00d4aa, #ffbe0b)',
+                    id: 'uphf', title: 'Université Polytechnique des Hauts-de-France', subtitle: 'Modules Polytechniques & Projets Transverses', year: '2023-2026',
+                    logo: 'https://image2url.com/r2/default/images/1770845782054-6aff1901-b7cb-4072-8640-c111adbd508c.png', gradient: 'linear-gradient(135deg, #00d4aa, #ffbe0b)',
                     categories: [
-                        {
-                            name: 'Innovation & Management (MPTHON)',
-                            icon: 'cpu',
-                            color: '#ff6b35',
-                            courses: [
-                                'Collaboration Manager-Ingénieur (avec INSA)',
-                                'Coaching d\'équipe : Gestion de projet & Design Thinking',
-                                'Création d\'intelligence collective et innovation agile'
-                            ]
-                        },
-                        {
-                            name: 'Développement Durable & Industrie',
-                            icon: 'sprout',
-                            color: '#00d4aa',
-                            courses: [
-                                'Analyse systémique : Produire durablement (RSE, ODD)',
-                                'Économie circulaire & de la fonctionnalité',
-                                'Diagnostic complet de durabilité d\'un site industriel'
-                            ]
-                        },
-                        {
-                            name: 'International & Analyse Média (Logos : Laval Québec)',
-                            icon: 'eye',
-                            color: '#6a4c93',
-                            courses: [
-                                '<div style="display:flex; align-items:center; gap:10px;">Partenariat Université Laval (Québec) <img src="https://image2url.com/r2/default/images/1770845708512-fe418a7a-02d0-4180-b674-2246efe895c1.png" style="height:20px; background:white; padding:2px; border-radius:4px;"></div>',
-                                'Sémiotique : Décryptage des stratégies visuelles & marketing',
-                                'Analyse critique des médias et réseaux sociaux'
-                            ]
-                        },
-                        {
-                            name: 'Communication Professionnelle',
-                            icon: 'mic',
-                            color: '#ff006e',
-                            courses: [
-                                'Prise de parole à fort enjeu & Pitch efficace',
-                                'Gestion du stress et maîtrise de l\'auditoire',
-                                'Synthèse et structuration du discours'
-                            ]
-                        },
-                        {
-                            name: 'Performance Linguistique (TOEIC)',
-                            icon: 'languages',
-                            color: '#ffbe0b',
-                            courses: [
-                                'Score Test Blanc : 925/990 (Niveau B2) <a href="https://image2url.com/r2/default/images/1770846207735-7e032cf9-27e0-47ca-8124-f5778d31ce2e.png" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold; margin-left:5px;">Cliquer pour voir</a>',
-                                'Certification officielle : Mars 2026 (Objectif 950+)',
-                                'Anglais Business & Professionnel'
-                            ]
-                        }
+                        { name: 'Innovation & Management (MPTHON)', icon: 'cpu', color: '#ff6b35', courses: ['Collaboration Manager-Ingénieur (avec INSA)', 'Coaching d\'équipe : Gestion de projet & Design Thinking', 'Création d\'intelligence collective et innovation agile'] },
+                        { name: 'Développement Durable & Industrie', icon: 'sprout', color: '#00d4aa', courses: ['Analyse systémique : Produire durablement (RSE, ODD)', 'Économie circulaire & de la fonctionnalité', 'Diagnostic complet de durabilité d\'un site industriel'] },
+                        { name: 'International & Analyse Média', icon: 'eye', color: '#6a4c93', courses: ['<div style="display:flex; align-items:center; gap:10px;">Partenariat Université Laval (Québec) <img src="https://image2url.com/r2/default/images/1770845708512-fe418a7a-02d0-4180-b674-2246efe895c1.png" style="height:20px; background:white; padding:2px; border-radius:4px;"></div>', 'Sémiotique : Décryptage des stratégies visuelles & marketing', 'Analyse critique des médias et réseaux sociaux'] },
+                        { name: 'Communication Professionnelle', icon: 'mic', color: '#ff006e', courses: ['Prise de parole à fort enjeu & Pitch efficace', 'Gestion du stress et maîtrise de l\'auditoire', 'Synthèse et structuration du discours'] },
+                        { name: 'Performance Linguistique (TOEIC)', icon: 'languages', color: '#ffbe0b', courses: ['Score Test Blanc : 925/990 (Niveau B2) <a href="https://image2url.com/r2/default/images/1770846207735-7e032cf9-27e0-47ca-8124-f5778d31ce2e.png" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold; margin-left:5px;">Cliquer pour voir</a>', 'Certification officielle : Mars 2026 (Objectif 950+)', 'Anglais Business & Professionnel'] }
                     ]
                 },
                 {
-                    id: 'worms',
-                    title: 'International Week - IAE Valenciennes & Hochschule Worms',
-                    subtitle: 'Designing Innovative Solutions for Trust & Well-being',
-                    year: '2026',
-                    logo: 'https://image2url.com/r2/default/images/1770887078016-308a9f49-8523-491a-b256-ff4dde992a04.png',
-                    gradient: 'linear-gradient(135deg, #ff006e, #00d4aa)',
+                    id: 'worms', title: 'International Week - IAE Valenciennes & Hochschule Worms', subtitle: 'Designing Innovative Solutions for Trust & Well-being', year: '2026',
+                    logo: 'https://image2url.com/r2/default/images/1770887078016-308a9f49-8523-491a-b256-ff4dde992a04.png', gradient: 'linear-gradient(135deg, #ff006e, #00d4aa)',
                     categories: [
-                        { 
-                            name: 'Design Thinking & Innovation Managériale', 
-                            icon: 'lightbulb', 
-                            color: '#ff006e', 
-                            courses: [
-                                '<strong>Intervenante :</strong> Prof. Dr. C. Leue-Bensch (Hochschule Worms University)', 
-                                '<strong>Approche Design Thinking :</strong> Co-création de pratiques organisationnelles innovantes favorisant la confiance et le bien-être.', 
-                                '<strong>Mise en situation :</strong> Travail en équipes interdisciplinaires sur des défis réels d\'entreprise (rôles de Project Team & Advisory Board).', 
-                                '<strong>Développement & Pitch :</strong> Processus complet alliant créativité, recherche et réflexion (Personas, Needfinding, Prototypage), clôturé par un pitch final devant un jury.',
-                                '<strong>Ressources d\'inspiration :</strong> <a href="https://www.youtube.com/watch?v=2lXh2n0aPyw" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold;">Piano Stairs</a> | <a href="https://www.youtube.com/watch?v=UAinLaT42xY" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold;">Tim Brown (Design Thinking)</a>'
-                            ] 
-                        }
+                        { name: 'Design Thinking & Innovation Managériale', icon: 'lightbulb', color: '#ff006e', courses: ['<strong>Intervenante :</strong> Prof. Dr. C. Leue-Bensch (Hochschule Worms University)', '<strong>Approche Design Thinking :</strong> Co-création de pratiques organisationnelles innovantes favorisant la confiance et le bien-être.', '<strong>Mise en situation :</strong> Travail en équipes interdisciplinaires sur des défis réels d\'entreprise (rôles de Project Team & Advisory Board).', '<strong>Développement & Pitch :</strong> Processus complet alliant créativité, recherche et réflexion (Personas, Needfinding, Prototypage), clôturé par un pitch final devant un jury.', '<strong>Ressources d\'inspiration :</strong> <a href="https://www.youtube.com/watch?v=2lXh2n0aPyw" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold;">Piano Stairs</a> | <a href="https://www.youtube.com/watch?v=UAinLaT42xY" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold;">Tim Brown (Design Thinking)</a>'] }
                     ]
                 }
             ],
             en: [
                 {
-                    id: 'l3',
-                    title: 'Bachelor 3 - Management and Organizational Development',
-                    year: '2023-2024',
-                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
-                    gradient: 'linear-gradient(135deg, #00d4aa, #6a4c93)',
+                    id: 'l3', title: 'Bachelor 3 - Management and Organizational Development', year: '2023-2024',
+                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png', gradient: 'linear-gradient(135deg, #00d4aa, #6a4c93)',
                     categories: [
-                        {
-                            name: 'Business & Management',
-                            icon: 'briefcase',
-                            color: '#ff6b35',
-                            courses: [
-                                'HR & Team Management',
-                                'B2B Marketing (Negotiation)',
-                                'International Marketing',
-                                'Financing & Investment',
-                                'Management Control',
-                                'Strategic Management'
-                            ]
-                        },
-                        {
-                            name: 'Digital Strategy',
-                            icon: 'trending-up',
-                            color: '#6a4c93',
-                            courses: [
-                                'GDPR / Digital Marketing',
-                                'Business Digitalization',
-                                'Social Media Communication'
-                            ]
-                        },
-                        {
-                            name: 'Legal',
-                            icon: 'award',
-                            color: '#00d4aa',
-                            courses: [
-                                'Labor Law',
-                                'Distribution/Consumer Law'
-                            ]
-                        },
-                        {
-                            name: 'Tools & Tech',
-                            icon: 'code',
-                            color: '#ff006e',
-                            courses: [
-                                'Graphic Creation Tools',
-                                'Management Information Systems',
-                                'Dashboards',
-                                'Introduction to Programming'
-                            ]
-                        },
-                        {
-                            name: 'Innovation & International',
-                            icon: 'globe',
-                            color: '#ffbe0b',
-                            courses: [
-                                'Innovation & Design Thinking',
-                                'Polytechnic Module (Eunice)',
-                                'Management English',
-                                'Project Management & Quality',
-                                'Business Simulation'
-                            ]
-                        }
+                        { name: 'Business & Management', icon: 'briefcase', color: '#ff6b35', courses: ['HR & Team Management', 'B2B Marketing (Negotiation)', 'International Marketing', 'Financing & Investment', 'Management Control', 'Strategic Management'] },
+                        { name: 'Digital Strategy', icon: 'trending-up', color: '#6a4c93', courses: ['GDPR / Digital Marketing', 'Business Digitalization', 'Social Media Communication'] },
+                        { name: 'Legal', icon: 'award', color: '#00d4aa', courses: ['Labor Law', 'Distribution/Consumer Law'] },
+                        { name: 'Tools & Tech', icon: 'code', color: '#ff006e', courses: ['Graphic Creation Tools', 'Management Information Systems', 'Dashboards', 'Introduction to Programming'] },
+                        { name: 'Innovation & International', icon: 'globe', color: '#ffbe0b', courses: ['Innovation & Design Thinking', 'Polytechnic Module (Eunice)', 'Management English', 'Project Management & Quality', 'Business Simulation'] }
                     ]
                 },
                 {
-                    id: 'm1',
-                    title: 'Master 1 - Entrepreneurship & Project Management',
-                    year: '2024-2025',
-                    subtitle: 'Expertise',
-                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
-                    gradient: 'linear-gradient(135deg, #6a4c93, #ff006e)',
+                    id: 'm1', title: 'Master 1 - Entrepreneurship & Project Management', year: '2024-2025', subtitle: 'Expertise',
+                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png', gradient: 'linear-gradient(135deg, #6a4c93, #ff006e)',
                     categories: [
-                        {
-                            name: 'Organizational Management',
-                            icon: 'users',
-                            color: '#6a4c93',
-                            courses: [
-                                'Organizational Behavior',
-                                'Meeting Management',
-                                'Union Negotiation',
-                                'Recruitment 5.0',
-                                'Conflict Management',
-                                'Conducting Interviews'
-                            ]
-                        },
-                        {
-                            name: 'Agile Project Mgmt',
-                            icon: 'target',
-                            color: '#ff006e',
-                            courses: [
-                                'Project Engineering',
-                                'Entrepreneurial Design',
-                                'Phygital Approach',
-                                'CRM',
-                                'Business Models & Startups'
-                            ]
-                        },
-                        {
-                            name: 'Finance & Performance',
-                            icon: 'bar-chart-3',
-                            color: '#00d4aa',
-                            courses: [
-                                'Financial Performance Mgmt',
-                                'Risk Management (Agile Risk)',
-                                'Financial Tools',
-                                'Corporate Taxation'
-                            ]
-                        },
-                        {
-                            name: 'Legal Environment',
-                            icon: 'award',
-                            color: '#ffbe0b',
-                            courses: [
-                                'Business Law',
-                                'Digital Law/GDPR',
-                                'Regulatory Compliance'
-                            ]
-                        },
-                        {
-                            name: 'Digital Tools',
-                            icon: 'code',
-                            color: '#ff6b35',
-                            courses: [
-                                'Adobe Suite Mastery & Power BI',
-                                'Information System Optimization',
-                                'Digital Watch',
-                                'Research Design'
-                            ]
-                        },
-                        {
-                            name: 'CSR & International',
-                            icon: 'globe',
-                            color: '#00d4aa',
-                            courses: [
-                                'Ethical & Ecological Diagnosis',
-                                'Sustainable Management',
-                                'Business English (+TOEIC)',
-                                'International Week',
-                                'Developing Transfer Capabilities'
-                            ]
-                        }
+                        { name: 'Organizational Management', icon: 'users', color: '#6a4c93', courses: ['Organizational Behavior', 'Meeting Management', 'Union Negotiation', 'Recruitment 5.0', 'Conflict Management', 'Conducting Interviews'] },
+                        { name: 'Agile Project Mgmt', icon: 'target', color: '#ff006e', courses: ['Project Engineering', 'Entrepreneurial Design', 'Phygital Approach', 'CRM', 'Business Models & Startups'] },
+                        { name: 'Finance & Performance', icon: 'bar-chart-3', color: '#00d4aa', courses: ['Financial Performance Mgmt', 'Risk Management (Agile Risk)', 'Financial Tools', 'Corporate Taxation'] },
+                        { name: 'Legal Environment', icon: 'award', color: '#ffbe0b', courses: ['Business Law', 'Digital Law/GDPR', 'Regulatory Compliance'] },
+                        { name: 'Digital Tools', icon: 'code', color: '#ff6b35', courses: ['Adobe Suite Mastery & Power BI', 'Information System Optimization', 'Digital Watch', 'Research Design'] },
+                        { name: 'CSR & International', icon: 'globe', color: '#00d4aa', courses: ['Ethical & Ecological Diagnosis', 'Sustainable Management', 'Business English (+TOEIC)', 'International Week', 'Developing Transfer Capabilities'] }
                     ]
                 },
                 {
-                    id: 'm2',
-                    title: 'Master 2 - Entrepreneurship & Project Management',
-                    year: '2025-2026',
-                    subtitle: 'Confirmation',
-                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png',
-                    gradient: 'linear-gradient(135deg, #ff006e, #ff6b35)',
+                    id: 'm2', title: 'Master 2 - Entrepreneurship & Project Management', year: '2025-2026', subtitle: 'Confirmation',
+                    logo: 'https://image2url.com/r2/default/images/1770848619109-37217b07-5291-48bd-b0cc-545728fc7623.png', gradient: 'linear-gradient(135deg, #ff006e, #ff6b35)',
                     categories: [
-                        {
-                            name: 'Advanced Strategy',
-                            icon: 'trending-up',
-                            color: '#ff6b35',
-                            courses: [
-                                'Collective Intelligence',
-                                'Salary Negotiation',
-                                'Company Health Indices',
-                                'Leading Change Projects',
-                                'Valuing Team Potential',
-                                'Managing Difficult Personalities'
-                            ]
-                        },
-                        {
-                            name: 'Project Steering',
-                            icon: 'target',
-                            color: '#ff006e',
-                            courses: [
-                                'MS Project',
-                                'Managing Digital Dimension',
-                                'Continuous Improvement',
-                                'Scrum Master (Prep)',
-                                'Quality Management'
-                            ]
-                        },
-                        {
-                            name: 'Data & Innovation',
-                            icon: 'sparkles',
-                            color: '#6a4c93',
-                            courses: [
-                                'Power BI (Advanced)',
-                                'Data Analysis',
-                                'Design Thinking',
-                                'Slow Management',
-                                'Innovation Protection',
-                                'Implementing Managerial Innovations'
-                            ]
-                        },
-                        {
-                            name: 'Entrepreneurship & Finance',
-                            icon: 'briefcase',
-                            color: '#00d4aa',
-                            courses: [
-                                'Financial Business Model',
-                                'Support Networks',
-                                'Project Financing',
-                                'Creator Journey Discovery',
-                                'Research Thesis'
-                            ]
-                        },
-                        {
-                            name: 'Digital Marketing',
-                            icon: 'trending-up',
-                            color: '#ffbe0b',
-                            courses: [
-                                'B2B Marketing',
-                                'Web Marketing',
-                                'Advanced Digital Marketing'
-                            ]
-                        }
+                        { name: 'Advanced Strategy', icon: 'trending-up', color: '#ff6b35', courses: ['Collective Intelligence', 'Salary Negotiation', 'Company Health Indices', 'Leading Change Projects', 'Valuing Team Potential', 'Managing Difficult Personalities'] },
+                        { name: 'Project Steering', icon: 'target', color: '#ff006e', courses: ['MS Project', 'Managing Digital Dimension', 'Continuous Improvement', 'Scrum Master (Prep)', 'Quality Management'] },
+                        { name: 'Data & Innovation', icon: 'sparkles', color: '#6a4c93', courses: ['Power BI (Advanced)', 'Data Analysis', 'Design Thinking', 'Slow Management', 'Innovation Protection', 'Implementing Managerial Innovations'] },
+                        { name: 'Entrepreneurship & Finance', icon: 'briefcase', color: '#00d4aa', courses: ['Financial Business Model', 'Support Networks', 'Project Financing', 'Creator Journey Discovery', 'Research Thesis'] },
+                        { name: 'Digital Marketing', icon: 'trending-up', color: '#ffbe0b', courses: ['B2B Marketing', 'Web Marketing', 'Advanced Digital Marketing'] }
                     ]
                 },
                 {
-                    id: 'uphf',
-                    title: 'Université Polytechnique des Hauts-de-France',
-                    subtitle: 'Polytechnic Modules & Cross-functional Projects',
-                    year: '2023-2026',
-                    logo: 'https://image2url.com/r2/default/images/1770845782054-6aff1901-b7cb-4072-8640-c111adbd508c.png',
-                    gradient: 'linear-gradient(135deg, #00d4aa, #ffbe0b)',
+                    id: 'uphf', title: 'Université Polytechnique des Hauts-de-France', subtitle: 'Polytechnic Modules & Cross-functional Projects', year: '2023-2026',
+                    logo: 'https://image2url.com/r2/default/images/1770845782054-6aff1901-b7cb-4072-8640-c111adbd508c.png', gradient: 'linear-gradient(135deg, #00d4aa, #ffbe0b)',
                     categories: [
-                        {
-                            name: 'Innovation & Management (MPTHON)',
-                            icon: 'cpu',
-                            color: '#ff6b35',
-                            courses: [
-                                'Manager-Engineer Collaboration (with INSA)',
-                                'Team Coaching: Project Mgmt & Design Thinking',
-                                'Creating Collective Intelligence & Agile Innovation'
-                            ]
-                        },
-                        {
-                            name: 'Sustainable Development & Industry',
-                            icon: 'sprout',
-                            color: '#00d4aa',
-                            courses: [
-                                'Systemic Analysis: Sustainable Production (CSR, SDGs)',
-                                'Circular Economy & Functionality Economy',
-                                'Full Sustainability Diagnostic of an Industrial Site'
-                            ]
-                        },
-                        {
-                            name: 'International & Media Analysis',
-                            icon: 'eye',
-                            color: '#6a4c93',
-                            courses: [
-                                '<div style="display:flex; align-items:center; gap:10px;">Partnership with Université Laval (Quebec) <img src="https://image2url.com/r2/default/images/1770845708512-fe418a7a-02d0-4180-b674-2246efe895c1.png" style="height:20px; background:white; padding:2px; border-radius:4px;"></div>',
-                                'Semiotics: Decoding Visual & Marketing Strategies',
-                                'Critical Analysis of Media and Social Networks'
-                            ]
-                        },
-                        {
-                            name: 'Professional Communication',
-                            icon: 'mic',
-                            color: '#ff006e',
-                            courses: [
-                                'High-Stakes Public Speaking & Effective Pitching',
-                                'Stress Management and Audience Mastery',
-                                'Synthesis and Structuring of Discourse'
-                            ]
-                        },
-                        {
-                            name: 'Linguistic Performance (TOEIC)',
-                            icon: 'languages',
-                            color: '#ffbe0b',
-                            courses: [
-                                'Practice Test Score: 925/990 (B2 Level) <a href="https://image2url.com/r2/default/images/1770846207735-7e032cf9-27e0-47ca-8124-f5778d31ce2e.png" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold; margin-left:5px;">View</a>',
-                                'Official Certification: March 2026 (Target 950+)',
-                                'Business & Professional English'
-                            ]
-                        }
+                        { name: 'Innovation & Management (MPTHON)', icon: 'cpu', color: '#ff6b35', courses: ['Manager-Engineer Collaboration (with INSA)', 'Team Coaching: Project Mgmt & Design Thinking', 'Creating Collective Intelligence & Agile Innovation'] },
+                        { name: 'Sustainable Development & Industry', icon: 'sprout', color: '#00d4aa', courses: ['Systemic Analysis: Sustainable Production (CSR, SDGs)', 'Circular Economy & Functionality Economy', 'Full Sustainability Diagnostic of an Industrial Site'] },
+                        { name: 'International & Media Analysis', icon: 'eye', color: '#6a4c93', courses: ['<div style="display:flex; align-items:center; gap:10px;">Partnership with Université Laval (Quebec) <img src="https://image2url.com/r2/default/images/1770845708512-fe418a7a-02d0-4180-b674-2246efe895c1.png" style="height:20px; background:white; padding:2px; border-radius:4px;"></div>', 'Semiotics: Decoding Visual & Marketing Strategies', 'Critical Analysis of Media and Social Networks'] },
+                        { name: 'Professional Communication', icon: 'mic', color: '#ff006e', courses: ['High-Stakes Public Speaking & Effective Pitching', 'Stress Management and Audience Mastery', 'Synthesis and Structuring of Discourse'] },
+                        { name: 'Linguistic Performance (TOEIC)', icon: 'languages', color: '#ffbe0b', courses: ['Practice Test Score: 925/990 (B2 Level) <a href="https://image2url.com/r2/default/images/1770846207735-7e032cf9-27e0-47ca-8124-f5778d31ce2e.png" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold; margin-left:5px;">View</a>', 'Official Certification: March 2026 (Target 950+)', 'Business & Professional English'] }
                     ]
                 },
                 {
-                    id: 'worms',
-                    title: 'International Week - IAE Valenciennes & Hochschule Worms',
-                    subtitle: 'Designing Innovative Solutions for Trust & Well-being',
-                    year: '2026',
-                    logo: 'https://image2url.com/r2/default/images/1770887078016-308a9f49-8523-491a-b256-ff4dde992a04.png',
-                    gradient: 'linear-gradient(135deg, #ff006e, #00d4aa)',
+                    id: 'worms', title: 'International Week - IAE Valenciennes & Hochschule Worms', subtitle: 'Designing Innovative Solutions for Trust & Well-being', year: '2026',
+                    logo: 'https://image2url.com/r2/default/images/1770887078016-308a9f49-8523-491a-b256-ff4dde992a04.png', gradient: 'linear-gradient(135deg, #ff006e, #00d4aa)',
                     categories: [
-                        { 
-                            name: 'Design Thinking & Management Innovation', 
-                            icon: 'lightbulb', 
-                            color: '#ff006e', 
-                            courses: [
-                                '<strong>Lecturer:</strong> Prof. Dr. C. Leue-Bensch (Hochschule Worms University)', 
-                                '<strong>Design Thinking Approach:</strong> Co-creating innovative organizational practices fostering trust and well-being.', 
-                                '<strong>Practical Application:</strong> Interdisciplinary teamwork on real workplace challenges (roles: Project Team & Advisory Board).', 
-                                '<strong>Development & Pitch:</strong> A comprehensive process combining creativity, research, and reflection (Personas, Needfinding, Prototyping), culminating in a final pitch to a jury.',
-                                '<strong>Resources:</strong> <a href="https://www.youtube.com/watch?v=2lXh2n0aPyw" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold;">Piano Stairs</a> | <a href="https://www.youtube.com/watch?v=UAinLaT42xY" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold;">Tim Brown (Design Thinking)</a>'
-                            ] 
-                        }
+                        { name: 'Design Thinking & Management Innovation', icon: 'lightbulb', color: '#ff006e', courses: ['<strong>Lecturer:</strong> Prof. Dr. C. Leue-Bensch (Hochschule Worms University)', '<strong>Design Thinking Approach:</strong> Co-creating innovative organizational practices fostering trust and well-being.', '<strong>Practical Application:</strong> Interdisciplinary teamwork on real workplace challenges (roles: Project Team & Advisory Board).', '<strong>Development & Pitch:</strong> A comprehensive process combining creativity, research, and reflection (Personas, Needfinding, Prototyping), culminating in a final pitch to a jury.', '<strong>Resources:</strong> <a href="https://www.youtube.com/watch?v=2lXh2n0aPyw" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold;">Piano Stairs</a> | <a href="https://www.youtube.com/watch?v=UAinLaT42xY" target="_blank" style="text-decoration:underline; color:var(--orange); font-weight:bold;">Tim Brown (Design Thinking)</a>'] }
                     ]
                 }
             ]
@@ -3001,17 +1580,106 @@
         
         animateGlow();
 
+        // --- LOGIQUE MODAL POPUP GÉNÉRIQUE ---
+        function openModal(title, subtitle, bodyHtml, color) {
+            const titleEl = document.getElementById('modalTitle');
+            titleEl.innerHTML = title;
+            titleEl.style.background = 'none';
+            titleEl.style.webkitTextFillColor = color;
+            titleEl.style.color = color;
+            
+            const bodyEl = document.getElementById('modalBody');
+            let finalHtml = '';
+            if (subtitle) {
+                finalHtml += `<div style="margin-bottom: 1.5rem; font-weight: 600; color: var(--text-primary); font-size: 1.1rem;">${subtitle}</div>`;
+            }
+            finalHtml += `<div style="color: var(--text-secondary); line-height: 1.7; font-size: 1.05rem;">${bodyHtml}</div>`;
+            bodyEl.innerHTML = finalHtml;
+            
+            document.getElementById('modalOverlay').classList.add('active');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+        }
+
+        document.getElementById('modalOverlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
+        });
+
+        // Ouvrir Modale "Atouts"
+        function openTrait(key, colorStr) {
+            const t = translations[currentLang];
+            const d = detailsData[currentLang];
+            if(t[key] && d[key]) {
+                const parts = t[key].split('</strong> — ');
+                const title = parts[0].replace('<strong>', '');
+                const subtitle = parts.length > 1 ? parts[1] : '';
+                openModal(title, subtitle, d[key], colorStr);
+            }
+        }
+
+        // Ouvrir Modale "Expériences"
+        function openExpModal(cardElement, colorStr) {
+            const title = cardElement.querySelector('.exp-info h3').innerHTML;
+            const company = cardElement.querySelector('.exp-company').innerHTML;
+            const period = cardElement.querySelector('.exp-period').innerHTML;
+            const subtitle = `${company} &nbsp;|&nbsp; ${period}`;
+            
+            const desc = cardElement.querySelector('.exp-desc').innerHTML;
+            const tags = cardElement.querySelector('.exp-tags').innerHTML;
+            
+            const bodyHtml = `
+                <div style="margin-bottom: 2.5rem; font-size: 1.05rem; line-height: 1.7;">${desc}</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">${tags}</div>
+            `;
+            
+            openModal(title, subtitle, bodyHtml, colorStr);
+        }
+
+        // Ouvrir Modale "Formation (Timeline)"
+        function openTimelineModal(id, title, subtitle, colorStr) {
+             const semester = academicData[currentLang].find(s => s.id === id);
+             if(!semester) return;
+             
+             const searchTerm = document.getElementById('searchInput').value.trim();
+             const filtered = filterCourses(semester, searchTerm);
+             
+             const bodyHtml = `
+                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                     ${filtered.categories.map(cat => `
+                         <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 1rem;">
+                             <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                 <div style="background: linear-gradient(135deg, ${cat.color}, ${cat.color}dd); width: 40px; height: 40px; border-radius: 0.8rem; display: flex; justify-content: center; align-items: center; color: white;">
+                                     <i data-lucide="${cat.icon}" width="20"></i>
+                                 </div>
+                                 <h4 style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">${cat.name}</h4>
+                             </div>
+                             <ul style="list-style: none; padding: 0;">
+                                 ${cat.courses.map(course => `
+                                     <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; gap: 0.5rem; align-items: flex-start; color: var(--text-secondary); font-size: 0.95rem;">
+                                         <i data-lucide="check" width="16" style="color: ${cat.color}; flex-shrink: 0; margin-top: 2px;"></i>
+                                         <span>${course}</span>
+                                     </li>
+                                 `).join('')}
+                             </ul>
+                         </div>
+                     `).join('')}
+                 </div>
+             `;
+             openModal(title, subtitle, bodyHtml, colorStr);
+        }
+
         // --- LOGIQUE TIMELINE & RECHERCHE ---
         function filterCourses(semester, searchTerm) {
             if (!searchTerm) return semester;
-            
             const filteredCategories = semester.categories.map(category => ({
                 ...category,
                 courses: category.courses.filter(course => 
                     course.toLowerCase().includes(searchTerm.toLowerCase())
                 )
             })).filter(category => category.courses.length > 0);
-
             return { ...semester, categories: filteredCategories };
         }
 
@@ -3034,10 +1702,8 @@
                 const totalCourses = filtered.categories.reduce((acc, cat) => acc + cat.courses.length, 0);
                 const courseLabel = currentLang === 'fr' ? 'matières' : 'courses';
                 
-                // LOGIQUE BADGE : Logo si dispo, sinon Icone
                 let badgeContent;
                 let badgeClass = 'timeline-badge';
-                
                 if (semester.logo) {
                     badgeContent = `<img src="${semester.logo}" alt="Logo">`;
                 } else {
@@ -3045,9 +1711,12 @@
                     badgeContent = `<i data-lucide="graduation-cap" width="24" color="white"></i>`;
                 }
 
+                // Couleur pour la popup basée sur la première catégorie ou default
+                const popupColor = semester.categories.length > 0 ? semester.categories[0].color : 'var(--purple)';
+
                 return `
-                    <div class="timeline-item reveal">
-                        <div class="timeline-header" onclick="this.nextElementSibling.classList.toggle('active'); if(this.nextElementSibling.classList.contains('active')){this.querySelector('.chevron').setAttribute('data-lucide','chevron-up')}else{this.querySelector('.chevron').setAttribute('data-lucide','chevron-down')}; lucide.createIcons();">
+                    <div class="timeline-item reveal" style="--card-color: ${popupColor};" onclick="openTimelineModal('${semester.id}', '${semester.title.replace(/'/g, "\\'")}', '${(semester.subtitle || '').replace(/'/g, "\\'")}', '${popupColor}')">
+                        <div class="timeline-header">
                             <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
                                 <div class="${badgeClass}" style="${!semester.logo ? 'background: ' + semester.gradient + ';' : ''}">
                                     ${badgeContent}
@@ -3059,30 +1728,8 @@
                             </div>
                             <div style="display:flex; align-items:center; gap:1rem;">
                                 <span class="timeline-count">${totalCourses} ${courseLabel}</span>
-                                <i data-lucide="chevron-down" width="22" class="chevron"></i>
-                            </div>
-                        </div>
-                        <div class="timeline-content" id="content-${semester.id}">
-                            <div class="timeline-body">
-                                <div class="categories-grid">
-                                    ${filtered.categories.map(cat => `
-                                        <div class="category-card">
-                                            <div class="category-header">
-                                                <div class="category-icon" style="background: linear-gradient(135deg, ${cat.color}, ${cat.color}dd);">
-                                                    <i data-lucide="${cat.icon}" width="20"></i>
-                                                </div>
-                                                <h4>${cat.name}</h4>
-                                            </div>
-                                            <ul class="category-courses">
-                                                ${cat.courses.map(course => `
-                                                    <li class="${searchTerm && course.toLowerCase().includes(searchTerm.toLowerCase()) ? 'highlight' : ''}">
-                                                        <i data-lucide="check" width="14" style="color: ${cat.color}; flex-shrink: 0;"></i>
-                                                        <span style="flex:1;">${course}</span>
-                                                    </li>
-                                                `).join('')}
-                                            </ul>
-                                        </div>
-                                    `).join('')}
+                                <div class="exp-action">
+                                    <i data-lucide="external-link" width="20"></i>
                                 </div>
                             </div>
                         </div>
@@ -3094,7 +1741,6 @@
             revealOnScroll();
         }
 
-        // Recherche
         const searchInput = document.getElementById('searchInput');
         const searchResults = document.getElementById('searchResults');
 
@@ -3134,11 +1780,9 @@
                 }
             });
             
-            // Active Dock Logic
             const sections = document.querySelectorAll('section, body');
             const navLi = document.querySelectorAll('.dock-item');
             let current = '';
-            
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
@@ -3146,7 +1790,6 @@
                     current = section.getAttribute('id');
                 }
             });
-
             navLi.forEach(a => {
                 a.classList.remove('active');
                 if (a.getAttribute('href').includes(current)) {
@@ -3178,7 +1821,7 @@
                 modeText.setAttribute('data-translate', 'sober_mode');
             }
             lucide.createIcons();
-            applyTranslations();
+            applyTranslations(); 
         });
 
         function applyTranslations() {
@@ -3194,7 +1837,6 @@
                 }
             });
             
-            // Mise à jour spécifique bouton mode
             const modeText = document.getElementById('modeText');
             if(soberMode) {
                 modeText.textContent = currentLang === 'fr' ? 'Sombre' : 'Dark';
@@ -3202,44 +1844,14 @@
                 modeText.textContent = t.sober_mode;
             }
 
-            if (searchInput) {
-                searchInput.placeholder = t.search_placeholder;
-            }
+            if (searchInput) searchInput.placeholder = t.search_placeholder;
             
-            // Mise à jour dynamique du lien CV selon la langue
             const cvLinkElement = document.getElementById('cvLink');
-            if (cvLinkElement && t.cv_link) {
-                cvLinkElement.href = t.cv_link;
-            }
+            if (cvLinkElement && t.cv_link) cvLinkElement.href = t.cv_link;
 
             renderTimeline(searchInput.value);
             lucide.createIcons();
         }
-
-        // --- LOGIQUE MODAL POPUP ---
-        const modalOverlay = document.getElementById('modalOverlay');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalBody = document.getElementById('modalBody');
-
-        function openDetail(key) {
-            const t = translations[currentLang];
-            const d = detailsData[currentLang];
-            
-            if(t[key]) modalTitle.innerHTML = t[key]; 
-            if(d[key]) {
-                modalBody.innerHTML = d[key];
-                modalOverlay.classList.add('active');
-            }
-        }
-
-        function closeModal() {
-            modalOverlay.classList.remove('active');
-        }
-
-        // Fermer au clic dehors
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) closeModal();
-        });
 
         // Toggle FAQ
         function toggleFaq(header) {
